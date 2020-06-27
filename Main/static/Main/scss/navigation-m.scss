@@ -4,8 +4,8 @@
 
 .navigation {
     overflow: hidden;
-    background-color: $bgcolor;
-    border-bottom: solid darkgrey;
+    // border-bottom: solid darkgrey;
+    background-color: $pinkcolor;
 }
 
 .navigation a {
@@ -15,10 +15,9 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: $m-medium;
+    
 }
 
-  
-        
 .navigation a.active {
     background-color: $pinkcolor;
     color: white;
@@ -27,17 +26,20 @@
 .navigation a.icon {
     float: right;
     display: block;
-    color:black;
+    color:white;
 }
 
 .navigation.responsive {
     position: fixed;
+    background-color: $bgcolor;
+    border-bottom: solid darkgrey;
 }
 
 .navigation.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
+    color:black;
 }
 
 .navigation.responsive a {

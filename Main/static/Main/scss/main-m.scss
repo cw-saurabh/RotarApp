@@ -23,7 +23,7 @@
 }
 
 .homeText2 {
-    font-size: $m-medium;
+    font-size: $m-extraMedium;
     color: $textcolor1;
 }
 
@@ -133,5 +133,18 @@
 #loginSection1  ::-ms-input-placeholder { /* Microsoft Edge */
     color:$textcolor1;
 }
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:10vw;
+    line-height: 10vw;;
+    background-color:darkgrey;
+    color: white;
+    text-align: center;
+ }
 
 }
