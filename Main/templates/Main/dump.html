@@ -1,0 +1,197 @@
+4. GBM 
+
+<div>
+    <span class="reportText3"><h4><b>4. General Body Meetings : </b></span>
+    <span class="reportText3" style="float:right;"><b>Total meetings : 3</b></h4></span>
+</div><br>
+<div class="table table-responsive">
+    <div class="row">
+        <div class="col-2" style="padding:0;"><input placeholder="Date" style="margin-left:1vw;margin-right:1vw;"class="medium" type="date"></div>
+        <div class="col-7" style="padding:0;"><input placeholder="Agenda" style="margin-left:2vw;margin-right:1vw;"class="extralong" type="text"></div>
+        <div class="col-2" style="padding:0;"><input placeholder="Attendance" style="margin-left:2vw;margin-right:1vw;"class="short" type="text"></div>
+        <div class="col-1" style="padding:0;"><i class="fa fa-close" style="font-size:30px;color:red;margin-left:3vw;margin-right:1vw;"></i></div>
+    </div>
+</div>
+<button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+<hr>
+
+<!-- 5. BOD  -->
+
+<div>
+    <span class="reportText3"><h4><b>5. BOD Meetings : </b></span>
+    <span class="reportText3" style="float:right;"><b>Total meetings : 3</b></h4></span>
+</div><br>
+<div class="table table-responsive">
+    <div class="row">
+        <div class="col-2" style="padding:0;"><input placeholder="Date" style="margin-left:1vw;margin-right:1vw;"class="medium" type="date"></div>
+        <div class="col-7" style="padding:0;"><input placeholder="Agenda" style="margin-left:2vw;margin-right:1vw;"class="extralong" type="text"></div>
+        <div class="col-2" style="padding:0;"><input placeholder="Attendance" style="margin-left:2vw;margin-right:1vw;"class="short" type="text"></div>
+        <div class="col-1" style="padding:0;"><i class="fa fa-close" style="font-size:30px;color:red;margin-left:3vw;margin-right:1vw;"></i></div>
+    </div>
+</div>
+<button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+<hr>
+</div>
+</section>
+<time class="completedNode" datetime="10:03"></time>
+
+<!-- Second section -->
+
+<section>
+<div class="formSection" >
+<span><h1>Something something</h1></span>
+<strong>Bat &amp; Ball</strong> On time
+</div>
+</section>
+<time class="node" datetime="10:03"></time> 
+
+<!-- Third section -->
+
+<section>
+<div class="formSection" >
+<span><h1>Something something</h1></span>
+<strong>Bat &amp; Ball</strong> On time
+</div>
+</section>
+<time class="node" datetime="10:03"></time> 
+
+<!-- Fourth section -->
+
+<section>
+<div class="formSection" >
+<span><h1>Something something</h1></span>
+<strong>Bat &amp; Ball</strong> On time
+</div>
+</section>
+<time class="node" datetime="10:03"></time> 
+<br><br>
+
+<!-- <script>
+        let meetingNumber = 1;
+        let totalCount = 1;
+        $(document).ready(function() {
+            $("#GBMmeetings").append(`
+            <div id=\"meeting`+meetingNumber+`\">
+                <li class=\"lic\" style=\"padding-left: 0px;\"><label>Date :<br></label><input style=\"margin-left:10px\" type=\"date\" id=\"date\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Agenda :<br></label><input style=\"margin-left:10px\" id=\"agenda\" style=\"width:20em\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Attendance :<br></label><input style=\"margin-left:10px\" type=\"number\"  id=\"attendance\" style=\"width:2em\"></li>
+                <button type="button" id=`+meetingNumber+` class="button" onclick="reset(this.id)" style="height:25px;width:auto">Reset</button>
+                <button type="button" id=`+meetingNumber+` class="button" onclick="deleteRow(this.id)" style="height:25px;width:auto">Delete</button>
+            </div>        
+            `);
+            $('#GBMCount').html("<b>Number Of GBM Conducted : "+totalCount+"</b>");
+        });
+
+        function reset(clicked) { 
+            $('#meeting'+clicked).html(`
+            
+                <li class=\"lic\" style=\"padding-left: 0px;\"><label>Date :<br></label><input style=\"margin-left:10px\" type=\"date\" id=\"date\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Agenda :<br></label><input style=\"margin-left:10px\" id=\"agenda\" style=\"width:20em\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Attendance :<br></label><input style=\"margin-left:10px\" type=\"number\"  id=\"attendance\" style=\"width:2em\"></li>
+                <button type="button" id=`+clicked+` class="button" onclick="reset(this.id)" style="margin-left:300px;">Reset</button>
+                <button type="button" id=`+clicked+` class="button" onclick="deleteRow(this.id)" style="margin-left:20px;">Delete</button>
+            
+            `);
+        }; 
+
+        function deleteRow(clicked) { 
+            if(totalCount>1)
+            {
+                totalCount-=1;
+                $('#meeting'+clicked).html("");
+                $('#GBMCount').html("<b>Number Of GBM Conducted : "+totalCount+"</b>");
+            }
+            else 
+            {
+                alert("Error;");
+            }    
+        }; 
+        
+        function renderGBMMeetings() {
+            meetingNumber+=1;
+            totalCount+=1;
+            $("#GBMmeetings").append(`
+            <div id=\"meeting`+meetingNumber+`\">
+                <li class=\"lic\" style=\"padding-left: 0px;\"><label>Date :<br></label><input style=\"margin-left:10px\" type=\"date\" id=\"date\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Agenda :<br></label><input style=\"margin-left:10px\" id=\"agenda\" style=\"width:20em\"></li>
+                <li class=\"lic\" style=\"padding-left: 50px;\"><label>Attendance :<br></label><input style=\"margin-left:10px\" type=\"number\"  id=\"attendance\" style=\"width:2em\"></li>
+                <button type="button" id=`+meetingNumber+` class="button" onclick="reset(this.id)" style="margin-left:300px;">Reset</button>
+                <button type="button" id=`+meetingNumber+` class="button" onclick="deleteRow(this.id)" style="margin-left:20px;">Delete</button>
+            </div>         
+            `);
+            $('#GBMCount').html("<b>Number Of GBM Conducted : "+totalCount+"</b>");
+        };
+        
+    </script> -->
+
+<!-- <div id="Main" class="block" style="border: 1px solid black;padding-top:20px;padding-right:80px;padding-left:80px;">
+    <br>
+    <div style="float:right">
+        <label for="reporting_month">Month : <br></label>
+        <select id="month" name="month" requi#D41367>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+        </select>
+        </div>
+    <li class="lic">
+        <label for="club_name">Name of the Club :<br></label>
+        <input type="text" placeholder="Rotaract Club of Panvel Central" id="clubname" style="width:20em" disabled>
+    </li>  
+    <li class="lic" style="padding-left: 50px;">
+          <label for="zone">Zone :<br></label>
+          <select id="zone" name="zone" disabled>
+             <option value="Zone 1">Zone 1</option>
+             <option value="Zone 2">Zone 2</option>
+             <option value="Zone 3">Zone 3</option>
+             <option value="Zone 4">Zone 4</option>
+             <option value="Zone 5">Zone 5</option>
+             <option value="Zone 6">Zone 6</option>
+          </select>
+    </li>
+    <li class="lic" style="padding-left: 50px;">
+          <label for="club_code">Club Code :<br></label>
+          <input type="text" placeholder="Enter Club Code" id="clubcode">
+    </li>
+
+    <table class="border text-center">
+            <tr>
+                <th class="text-center">Date</th>
+                <th class="text-center">Event Name</th>
+                <th class="text-center">Avenue</th>
+                <th class="text-center">Attendance</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input class="medium" type="date" ></td>
+                <td><input class="medium" type="text" ></td>
+                <td><input class="short" type="text" style="width:10vw" ></td>
+                <td><input class="short" type="text" style="width:10vw" ></td>
+                <td><i class="fa fa-close" style="font-size:20px;color:#D41367"></i></td>
+            </tr>
+            <tr>
+                <td><input type="date" id="ae"></td>
+                <td><input type="text" id="te"></td>
+                <td><input type="text" id="dt"></td>
+                <td><input type="text" id=""></td>
+                <td><i class="fa fa-close" style="font-size:20px;color:#D41367"></i></td>
+            </tr>
+        </table>
+        
+     -->
+        
+<!--                 
+        <div id="GBMmeetings"></div>
+        <button type="button" class="button" onclick="renderGBMMeetings()">Add Row</button>
+            
+        <p style="padding-top: 20px;" id="GBMCount"></p>
+        <br> -->

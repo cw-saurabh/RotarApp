@@ -1,0 +1,52 @@
+{% load static %}
+{% if tab %}
+
+<script>
+  $(document).ready(function() {
+      $(".mobile a").removeClass("active");
+      $(".desktop a").removeClass("active");
+      $("#desktop-{{tab}}").addClass("active");
+      $("#mobile-{{tab}}").addClass("active");      
+  });
+</script>
+
+{% endif %}
+
+<div class="navigation sticky" id="mynavigation">
+  <img id="logo" src="{% static 'Main/images/Group 10@2x.png' %}" alt="Rotaract">
+  <div class="desktop">
+  
+    <a href="{% url 'main-home' %}" id="desktop-home">Home</a>
+    <a href="{% url 'main-report' %}" id="desktop-report">Reporting</a>
+    <a href="{% url 'main-login' %}" id="desktop-login">Login</a>
+    <!-- <a href="{% url 'main-zones' %}" id="desktop-zones">Zones</a>
+    <a href="{% url 'main-about' %}" id="desktop-about">About Us</a> 
+    <a href="{% url 'main-contact' %}" id="desktop-contact">Contact Us</a>   -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>  
+  <div class="mobile">
+      <a href="{% url 'main-home' %}" id="mobile-home">Home</a>
+      <a href="{% url 'main-report' %}" id="mobile-report">Reporting</a>
+      <a href="{% url 'main-login' %}" id="mobile-login">Login</a>
+      <!-- <a href="{% url 'main-zones' %}" id="mobile-zones">Zones</a>
+      <a href="{% url 'main-about' %}" id="mobile-about">About Us</a> 
+      <a href="{% url 'main-contact' %}" id="mobile-contact">Contact Us</a>   -->
+      <a href="javascript:void(0);" class="icon" onclick="openNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>  
+</div>
+
+<script>
+  
+function openNav() {
+  var x = document.getElementById("mynavigation");
+  if (x.className === "navigation sticky") {
+    x.className += " responsive";
+  } else {
+    x.className = "navigation sticky";
+  }
+}
+</script>
