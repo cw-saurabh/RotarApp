@@ -22,9 +22,7 @@
     <!-- <a href="{% url 'main-zones' %}" id="desktop-zones">Zones</a>
     <a href="{% url 'main-about' %}" id="desktop-about">About Us</a> 
     <a href="{% url 'main-contact' %}" id="desktop-contact">Contact Us</a>   -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+
   </div>  
   <div class="mobile">
       <a href="{% url 'main-home' %}" id="mobile-home">Home</a>
@@ -48,5 +46,14 @@ function openNav() {
   } else {
     x.className = "navigation sticky";
   }
+
+  x = document.getElementById("mainWrapperContainer");
+  if (x.className === "container") {
+    x.className += " blur";
+  } else {
+    x.className = "container";
+  }
+
+
 }
 </script>

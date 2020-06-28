@@ -6,6 +6,7 @@
     overflow: hidden;
     // border-bottom: solid darkgrey;
     background-color: $pinkcolor;
+    z-index:999;
 }
 
 .navigation a {
@@ -25,14 +26,15 @@
 
 .navigation a.icon {
     float: right;
-    display: block;
+    display: inline-block;
     color:white;
 }
 
 .navigation.responsive {
     position: fixed;
     background-color: $bgcolor;
-    border-bottom: solid darkgrey;
+    border-bottom: solid black;
+    z-index:999;
 }
 
 .navigation.responsive .icon {

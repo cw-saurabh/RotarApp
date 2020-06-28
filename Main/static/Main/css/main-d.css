@@ -1,7 +1,7 @@
 body, html {
   width: 100%;
   height: 100%;
-  background: #F5F5F5;
+  background: #FFFFFF;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
@@ -13,6 +13,11 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.blur {
+  filter: blur(15px);
+  z-index: 0;
 }
 
 @media screen and (min-width: 1000px) {
@@ -38,7 +43,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
   }
   .homeText2 {
     font-size: 2vw;
-    color: #779ECB;
+    color: #337ab7;
   }
   .homeImage1 {
     margin-left: 5vw;
@@ -60,56 +65,56 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     margin-right: 2vw;
     margin-top: 2vw;
     height: 2.6vw;
-    color: #779ECB;
+    color: #337ab7;
   }
   #loginSection1 input[type=text], input[type=Password] {
     border: none;
     border-radius: 4px;
-    color: #779ECB;
-    background-color: #F5F5F5;
+    color: #337ab7;
+    background-color: #FFFFFF;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   #loginSection1 input[type=text]:hover, input[type=text]:focus {
-    border: 2px solid #779ECB;
+    border: 2px solid #337ab7;
     border-radius: 4px;
     outline: none;
-    color: #779ECB;
-    background-color: #F5F5F5;
+    color: #337ab7;
+    background-color: #FFFFFF;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: none;
   }
   #loginSection1 input[type=Password]:hover, input[type=Password]:focus {
-    border: 2px solid #779ECB;
+    border: 2px solid #337ab7;
     border-radius: 4px;
     outline: none;
-    color: #779ECB;
-    background-color: #F5F5F5;
+    color: #337ab7;
+    background-color: #FFFFFF;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: none;
   }
   #loginSection1 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #779ECB;
+    color: #337ab7;
     opacity: 1;
     /* Firefox */
   }
   #loginSection1 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: #779ECB;
+    color: #337ab7;
   }
   #loginSection1 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: #779ECB;
+    color: #337ab7;
   }
   #loginSection1 #formText {
     width: 80%;
     margin-left: 2vw;
     margin-right: 2vw;
-    color: #779ECB;
+    color: #337ab7;
   }
   #loginImage1 {
     float: none;
@@ -120,13 +125,14 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     margin-right: auto;
   }
   #loginButton1 {
-    background-color: #779ECB;
+    background-color: #337ab7;
     color: white;
     font-weight: bold;
     border-radius: 4px;
     margin-top: 3vw;
     height: 3.5vw;
-    border: 2px solid #779ECB;
+    border: 2px solid #337ab7;
+    width: 80%;
     box-shadow: 3px 3px 2px #555;
   }
   .footer {
@@ -135,7 +141,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     bottom: 0;
     width: 100%;
     height: 5vw;
-    background-color: darkgrey;
+    background-color: #555555;
     color: white;
     text-align: center;
     padding: 2vw;

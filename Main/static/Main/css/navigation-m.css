@@ -2,6 +2,7 @@
   .navigation {
     overflow: hidden;
     background-color: #D41367;
+    z-index: 999;
   }
   .navigation a {
     display: none;
@@ -17,13 +18,14 @@
   }
   .navigation a.icon {
     float: right;
-    display: block;
+    display: inline-block;
     color: white;
   }
   .navigation.responsive {
     position: fixed;
-    background-color: #F5F5F5;
-    border-bottom: solid darkgrey;
+    background-color: #FFFFFF;
+    border-bottom: solid black;
+    z-index: 999;
   }
   .navigation.responsive .icon {
     position: absolute;

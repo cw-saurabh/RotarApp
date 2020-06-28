@@ -17,6 +17,10 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     width: 100%;
 }
 
+.blur {
+    filter: blur(15px);
+    z-index:0;
+}
 
 
 @media screen and (min-width: 1000px) {
@@ -155,6 +159,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     margin-top:3vw;
     height : 3.5vw;
     border: 2px solid $textcolor1;
+    width:80%;
     box-shadow: 3px 3px 2px #555;
 }
 
@@ -165,7 +170,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     bottom: 0;
     width: 100%;
     height:5vw;
-    background-color:darkgrey;
+    background-color:#555555;
     color: white;
     text-align: center;
     padding:2vw;
