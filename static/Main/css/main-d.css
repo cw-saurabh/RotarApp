@@ -1,0 +1,148 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+p, div, h1, h2, h3, h4, h5, h6, a, span {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.blur {
+  filter: blur(15px);
+  z-index: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .mobile {
+    display: none;
+  }
+  .container {
+    width: 98%;
+    margin: 0 auto;
+  }
+  #homeSection1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .homeText1 {
+    font-size: 5vw;
+    color: #D41367;
+  }
+  .homeText2 {
+    font-size: 2vw;
+    color: #337ab7;
+  }
+  .homeImage1 {
+    margin-left: 5vw;
+    width: 40vw;
+    height: 35vw;
+  }
+  #loginSection1 {
+    margin-top: 1vw;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2vw 10vw 2vw 10vw;
+  }
+  #loginSection1 input, button {
+    width: 80%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 2vw;
+    height: 2.6vw;
+    color: #337ab7;
+  }
+  #loginSection1 input[type=text], input[type=Password] {
+    border: none;
+    border-radius: 4px;
+    color: #337ab7;
+    background-color: #F5F5F5;
+    font-weight: bold;
+    padding-left: 1vw;
+    box-shadow: 2px 2px 2px #555;
+  }
+  #loginSection1 input[type=text]:hover, input[type=text]:focus {
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+    outline: none;
+    color: #337ab7;
+    background-color: #F5F5F5;
+    font-weight: bold;
+    padding-left: 1vw;
+    box-shadow: none;
+  }
+  #loginSection1 input[type=Password]:hover, input[type=Password]:focus {
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+    outline: none;
+    color: #337ab7;
+    background-color: #F5F5F5;
+    font-weight: bold;
+    padding-left: 1vw;
+    box-shadow: none;
+  }
+  #loginSection1 ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #337ab7;
+    opacity: 1;
+    /* Firefox */
+  }
+  #loginSection1 :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #337ab7;
+  }
+  #loginSection1 ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #337ab7;
+  }
+  #loginSection1 #formText {
+    width: 80%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: #337ab7;
+  }
+  #loginImage1 {
+    float: none;
+    display: block;
+    height: 7vw;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #loginButton1 {
+    background-color: #337ab7;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 3vw;
+    height: 3.5vw;
+    border: 2px solid #337ab7;
+    width: 80%;
+    box-shadow: 3px 3px 2px #555;
+  }
+  .footer {
+    margin-top: 20vw;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5vw;
+    background-color: #555555;
+    color: white;
+    text-align: center;
+    padding: 2vw;
+  }
+}
