@@ -1,5 +1,6 @@
 @media screen and (max-width: 1000px) {
   .navigation {
+    position: static;
     overflow: hidden;
     background-color: #D41367;
     z-index: 999;
@@ -22,8 +23,8 @@
     color: white;
   }
   .navigation.responsive {
-    position: fixed;
-    background-color: #FFFFFF;
+    position: static;
+    background-color: #F5F5F5;
     border-bottom: solid black;
     z-index: 999;
   }

@@ -3,6 +3,7 @@
 @media screen and (max-width: 1000px) {
 
 .navigation {
+    position: static;
     overflow: hidden;
     // border-bottom: solid darkgrey;
     background-color: $pinkcolor;
@@ -31,7 +32,7 @@
 }
 
 .navigation.responsive {
-    position: fixed;
+    position: static; //fixed;
     background-color: $bgcolor;
     border-bottom: solid black;
     z-index:999;

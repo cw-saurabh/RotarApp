@@ -1,0 +1,453 @@
+<div class="heading">
+    <b>Club Membership Details</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="text-center mobile m-subHeading">
+        Members' data
+        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date of joining</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Name of the Member</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Type</p><br>
+            <select name="type" id="type">
+                <option>Inducted Member</option>
+                <option>Prospective Member</option>
+                <option>Guest Member</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Gender</p><br>
+            <select name="gender" id="gender">
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-tint" aria-hidden="true"></i>&nbsp;&nbsp;Blood Group</p><br>
+            <select name="Blood Grouup">
+                <option>A +</option>
+                <option>A -</option>
+                <option>A Unknown</option>
+                <option>B +</option>
+                <option>B -</option>
+                <option>B Unknown</option>
+                <option>AB +</option>
+                <option>AB -</option>
+                <option>AB Unknown</option>
+                <option>O +</option>
+                <option>O -</option>
+                <option>O Unknown</option>
+                <option>Unknown</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;&nbsp;Rotary Id</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date of Birth</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-3">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date of joining</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Name of the Member</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Type</p><br>
+            <select name="type" id="type">
+                <option>Inducted Member</option>
+                <option>Prospective Member</option>
+                <option>Guest Member</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Gender</p><br>
+            <select name="gender" id="gender">
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-tint" aria-hidden="true"></i>&nbsp;&nbsp;Blood Group</p><br>
+            <select name="Blood Grouup">
+                <option>A +</option>
+                <option>A -</option>
+                <option>A Unknown</option>
+                <option>B +</option>
+                <option>B -</option>
+                <option>B Unknown</option>
+                <option>AB +</option>
+                <option>AB -</option>
+                <option>AB Unknown</option>
+                <option>O +</option>
+                <option>O -</option>
+                <option>O Unknown</option>
+                <option>Unknown</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>   
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;&nbsp;Rotary Id</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date of Birth</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-3">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+    <div class="text-center mobile m-subHeading">
+        Member-Matrix
+        <br>
+        <p style="font-size:2.2vw;color:#337ab7">{ I : Intial Count, II : Added this month, III : Left, IV : Prospective, V : Guest, VI : Total }
+        <br><br><br>
+    </div>
+    
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data00">
+            
+        </div>
+        <div class="col-xs-2" id="data01">
+            M
+        </div>
+        <div class="col-xs-2" id="data02">
+            F
+        </div>
+        <div class="col-xs-2" id="data03">
+            O
+        </div>
+        <div class="col-xs-2" id="data04">
+            T
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data10">
+            I.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data20">
+            II.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data30">
+            III.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data40">
+            IV.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data50">
+            V.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <div class="row m-memberMatrix">
+        <div class="col-xs-2 col-lg-3" id="data60">
+            VI.
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+        <div class="col-xs-2">
+            <input type="text" >
+        </div>
+    </div>
+    <hr>
+</div>
+<br>
+<div class="heading">
+    <b>General Body Meeting</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label">ByLaws Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label">Budget Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+            <input type="text">
+        </div>
+        
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label">ByLaws Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label">Budget Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+            <input type="text">
+        </div>
+        
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+     
+</div>
+<br>
+<div class="heading">
+    <b>BOD Meeting</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label">ByLaws Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label">Budget Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+            <input type="text">
+        </div>
+        
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>   
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label">ByLaws Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label">Budget Passed?</p><br>
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+            <input type="text">
+        </div>
+        
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div>

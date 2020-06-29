@@ -1,0 +1,90 @@
+<div class="heading">
+    <b>Events Carried Out</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Name of the Event</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
+            <select name="avenue" id="avenue">
+                <option>CMD</option>
+                <option>CSD</option>
+                <option>ISD</option>
+                <option>PDD</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-btc" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Description</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Name of the Event</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
+            <select name="avenue" id="avenue">
+                <option>CMD</option>
+                <option>CSD</option>
+                <option>ISD</option>
+                <option>PDD</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
+            <input type="text">
+        </div>    
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-btc" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Description</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div>

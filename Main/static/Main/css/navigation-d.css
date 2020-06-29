@@ -1,13 +1,23 @@
 @media screen and (min-width: 1000px) {
   .navigation {
     overflow: hidden;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 2%;
     z-index: 999;
     opacity: 1;
+    width: 10vw;
+  }
+  .navigation:after {
+    content: '';
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    top: 8vw;
+    background: #969696;
+    position: absolute;
   }
   .desktop {
     float: right;
@@ -37,7 +47,7 @@
     display: none;
   }
   .sticky {
-    position: fixed;
+    position: static;
     top: 0;
     width: 100%;
   }

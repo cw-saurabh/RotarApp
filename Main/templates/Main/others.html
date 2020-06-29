@@ -1,0 +1,185 @@
+<div class="heading">
+    <b>Dues paid to District</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-6">
+            <p class="label">Dues paid upto last month <br>@ INR 300
+                Per member
+                </p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-6">
+            <p class="label">Payment for new members<br>inducted
+                during this month
+                </p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-6">
+            <p class="label">New members inducted this month</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-6">
+            <p class="label">Total District Dues paid</p><br>
+            <input type="text">
+        </div>
+        
+    </div>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div> 
+<br>
+<div class="heading">
+    <b>Details of Bulletin</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-4">
+            <p class="label">Name of Bulletin</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-4">
+            <p class="label">Type of Bulletin</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-4">
+            <p class="label">Link</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-4">
+            <p class="label">Issued on</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-4">
+            <p class="label">Last Issued on</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-4">
+            <p class="label">Frequency</p><br>
+            <input type="text">
+        </div>
+        
+    </div>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div> 
+<br>
+<div class="heading">
+    <b>Upcoming Events</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Details of the Event</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
+            <select name="avenue" id="avenue">
+                <option>CMD</option>
+                <option>CSD</option>
+                <option>ISD</option>
+                <option>PDD</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
+            <input type="date">
+        </div>
+        <div class="col-lg-6">
+            <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Details of the Event</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
+            <select name="avenue" id="avenue">
+                <option>CMD</option>
+                <option>CSD</option>
+                <option>ISD</option>
+                <option>PDD</option>
+                <option style="display:none" selected></option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <br>
+            <button type="button" onclick="renderGBMMeetings()">Delete Row</button>
+        </div>
+    </div>
+    <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
+    <button type="button" class="addRow" onclick="renderGBMMeetings()">Add Row</button>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div> 
+<br>
+<div class="heading">
+    <b>Feedback</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <div class="col-lg-8">
+            <p class="label">Whether you have received acknowledgement
+                <br>from the District Secretary ?
+        </div>
+        <div class="col-lg-4">
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-8">
+            <p class="label">Whether you have received acknowledgement
+                <br>from the DZR / AZR ?
+        </div>
+        <div class="col-lg-4">
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-8">
+            <p class="label">Whether you have received receipt <br>for payment
+                of Dues ?                        
+        </div>
+        <div class="col-lg-4">
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+        <div class="col-lg-8">
+            <p class="label">Whether you have receives regular <br>correspondence
+                from the District ?                        
+        </div>
+        <div class="col-lg-4">
+            <select name="type" id="byLaws">
+                <option>Yes</option>
+                <option selected>No</option>
+            </select>
+        </div>
+    </div>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div> 
+<br>
+<div class="heading">
+    <b>Suggestions (If any)</b>
+</div>
+<br>
+<div class="container-fluid table-responsive">
+    <div class="row">
+        <textarea rows="5"></textarea>
+    </div>
+    <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
+</div> 

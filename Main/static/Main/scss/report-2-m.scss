@@ -2,6 +2,49 @@
 
 @media screen and (max-width: 1000px) {
 
+//pagination
+
+#tabs {
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0vw;
+    z-index:999;
+    background-color: $bgcolor;
+    overflow: hidden;
+    padding:0;
+    margin:0;
+    width:100%;
+    // border-bottom:solid $pinkcolor;
+    // border-top:solid $pinkcolor;
+}
+
+#tabs .row {
+    height:10vw;
+    line-height:10vw;
+}
+
+.tablinks {
+    color: $pinkcolor;
+    font-size:$m-small;
+}
+
+.tablinks.active {
+    font-weight: bolder;
+    font-size:$m-extraMedium;
+}
+
+.tabcontent {
+    display: none;
+    padding-left:5%;
+    padding-right:5%;
+}
+.tabcontent.active {
+    display:block;
+}
+
+  
+
 //Heading Section
 
 #reportHeading1 {

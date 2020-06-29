@@ -1,6 +1,14 @@
 @import 'Main/scss/globals';
 
 
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 //Heading Section
 
 #reportHeadingSection {
@@ -11,6 +19,57 @@
 
 
 @media screen and (min-width: 1000px) {
+
+//Pagination
+
+#tabs {
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0vw;
+    background-color: $bgcolor;
+    z-index:999;
+    padding:0;
+    margin:3vw 0 0 0;
+    width:100%;
+    // border-bottom:solid $pinkcolor;
+    // border-top:solid $pinkcolor;
+    height:auto;
+}
+
+
+
+#tabs .row {
+    height:3vw;
+    line-height:1vw;
+}
+
+
+.tablinks {
+    color: $pinkcolor;
+    font-size:$d-small;
+}
+
+.tablinks:hover {
+    cursor:pointer;
+}
+
+.tablinks.active {
+    font-weight: bolder;
+    font-size:$d-medium;
+}
+
+.tabcontent {
+    display: none;
+    padding-left:1%;
+    padding-right:1%;
+}
+
+.tabcontent.active {
+    display:block;
+}
+
+
 
 //Heading Section
 

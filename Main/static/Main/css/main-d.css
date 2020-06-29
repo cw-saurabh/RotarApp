@@ -1,7 +1,7 @@
 body, html {
   width: 100%;
   height: 100%;
-  background: #FFFFFF;
+  background: #F5F5F5;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
@@ -25,9 +25,8 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     display: none;
   }
   .container {
-    width: 90%;
+    width: 98%;
     margin: 0 auto;
-    padding-top: 12em;
   }
   #homeSection1 {
     margin: 0;
@@ -71,7 +70,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     border: none;
     border-radius: 4px;
     color: #337ab7;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: 2px 2px 2px #555;
@@ -81,7 +80,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     border-radius: 4px;
     outline: none;
     color: #337ab7;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: none;
@@ -91,7 +90,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     border-radius: 4px;
     outline: none;
     color: #337ab7;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     font-weight: bold;
     padding-left: 1vw;
     box-shadow: none;

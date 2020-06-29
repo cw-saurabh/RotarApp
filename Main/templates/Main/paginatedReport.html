@@ -1,0 +1,84 @@
+{% extends "Main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<script>
+function openSection(evt, sectionName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(sectionName).style.display = "block";
+    evt.currentTarget.className += " active";
+    document.body.scrollTop = 5; // For Safari
+    document.documentElement.scrollTop = 5; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+
+
+<div id="reportForm">
+
+<div id="reportHeadingSection" class="text-center">
+    <h4 id="reportHeading1"><b>Secretarial Reporting</b></h4>
+    <img id="reportImage1" src="{% static 'Main/images/Landing Image.png' %}" alt="Rotaract">
+    <h4 id="reportHeading2"><b>Rotaract Club Of<br>Panvel Central - Zone 1</b></h4>
+</div>
+
+<div class="container" id="tabs">
+    <br>
+    <div class="progress" style="margin:0">
+        <div class="progress-bar" style="margin:0;width:70%;background-color:#D41367"></div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-3 segment"></div>
+        <div class="col-1 nodes"></div>
+        <div class="col-2 segment"></div>
+        <div class="col-1 nodes"></div>
+        <div class="col-2 segment"></div>
+        <div class="col-1 nodes"></div>
+    </div>     -->
+    <div class="row" style="margin:0">
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks active" onclick="openSection(event, 'Admin')">Admin</p>
+        </div>
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks" onclick="openSection(event, 'Avenue')">Avenue</p>
+        </div>
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks" onclick="openSection(event, 'Others')">Others</p>
+        </div>
+    </div>
+    <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
+    <br>
+</div>
+
+<div id="Admin" class="tabcontent active">
+    <br><br>
+    {% include "Main/admin.html" %}
+    <br><br>
+</div>
+
+<div id="Avenue" class="tabcontent">
+    <br><br>
+    {% include "Main/avenue.html" %}
+    <br><br>
+</div>
+
+<div id="Others" class="tabcontent">
+    <br><br>
+    {% include "Main/others.html" %}
+    <br><br>
+</div>
+
+</div>
+
+{% endblock content%}
+

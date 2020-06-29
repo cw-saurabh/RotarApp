@@ -10,7 +10,7 @@ def login(request):
     return render(request, 'Main/login.html',{'tab':'login'})
 
 def report(request):
-    return render(request, 'Main/report.html',{'title':'Reporting','tab':'report'})
+    return render(request, 'Main/paginatedReport.html',{'title':'Reporting','tab':'report'})
 
 def about(request):
     return render(request, 'Main/about.html',{'title':'About Us','tab':'about'})
