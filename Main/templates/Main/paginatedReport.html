@@ -1,34 +1,14 @@
 {% extends "Main/base.html" %}
-
+    
 {% load static %}
 
 {% block content %}
-
-<script>
-function openSection(evt, sectionName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(sectionName).style.display = "block";
-    evt.currentTarget.className += " active";
-    document.body.scrollTop = 5; // For Safari
-    document.documentElement.scrollTop = 5; // For Chrome, Firefox, IE and Opera
-}
-</script>
-
-
 
 <div id="reportForm">
 
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1"><b>Secretarial Reporting</b></h4>
-    <img id="reportImage1" src="{% static 'Main/images/Landing Image.png' %}" alt="Rotaract">
+    <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract">
     <h4 id="reportHeading2"><b>Rotaract Club Of<br>Panvel Central - Zone 1</b></h4>
 </div>
 

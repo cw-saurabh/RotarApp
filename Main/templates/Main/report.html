@@ -4,25 +4,6 @@
 
 {% block content %}
 
-<script>
-    $(document).ready(function(){
-        if($(window).width()>1000)
-        {
-            $("#data01").html("<p class=\"text-center\">Male");
-            $("#data02").html("<p class=\"text-center\">Female");
-            $("#data03").html("<p class=\"text-center\">Other");
-            $("#data04").html("<p class=\"text-center\">Total");
-            $("#data10").html("<p>Members at the beginning");
-            $("#data20").html("<p>Members Added");
-            $("#data30").html("<p>Members Left");
-            $("#data40").html("<p>Prospective");
-            $("#data50").html("<p>Guests (RYE /NGSE /Family)");
-            $("#data60").html("<p>Total");
-        }
-      });
-    </script>
-
-
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1"><b>Secretarial Reporting</b></h4>
     <img id="reportImage1" src="{% static 'Main/images/Landing Image.png' %}" alt="Rotaract">
