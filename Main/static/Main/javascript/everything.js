@@ -8,6 +8,7 @@ let futureEventsCount = 0;
 let futureEventsIndex = 0;
 let eventsCount = 0;
 let eventsIndex = 0;
+let active="Admin";
 
 $(document).ready(function(){
     
@@ -29,11 +30,26 @@ $(document).ready(function(){
     appendBoardOfDirectorsMeeting();
     appendFutureEvent();
     appendEvent();
+
+    if(active=='Admin') {
+        $("#reportButton1").attr('disabled', true);
+    }
+    else{
+        $("#reportButton3").attr('disabled', true);
+    }
+    if(active=='Others') {
+        $("#reportButton3").attr('disabled', true);
+    }
+    else {
+        $("#reportButton3").attr('disabled', false);
+    }
 });
 
 
 
-function openSection(evt, sectionName) {
+
+function openSection(sectionName) {
+    active=sectionName;
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) 
@@ -45,11 +61,113 @@ function openSection(evt, sectionName) {
     {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+    // document.getElementById(sectionName).style.display = "block";
+    // evt.currentTarget.className += " active";
+    document.getElementById(sectionName+"Link").className+= " active";
     document.getElementById(sectionName).style.display = "block";
-    evt.currentTarget.className += " active";
-    document.body.scrollTop = 5; // For Safari
-    document.documentElement.scrollTop = 5; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    
+    if(active=='Admin') {
+        $("#reportButton1").attr('disabled', true);
+    }
+    else {
+        $("#reportButton1").attr('disabled', false);
+    }
+    if(active=='Others') {
+        $("#reportButton3").attr('disabled', true);
+    }
+    else {
+        $("#reportButton3").attr('disabled', false);
+    }
+    
 }
+
+function openPreviousSection() {
+    if (active=='Avenue')
+    sectionName = 'Admin';
+    else if(active=='Others')
+    sectionName = 'Avenue';
+    else if(active=='Admin')
+    sectionName = 'Admin';
+    active=sectionName;
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) 
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) 
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // document.getElementById(sectionName).style.display = "block";
+    // evt.currentTarget.className += " active";
+    document.getElementById(sectionName+"Link").className+= " active";
+    document.getElementById(sectionName).style.display = "block";
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    
+    if(active=='Admin') {
+        $("#reportButton1").attr('disabled', true);
+    }
+    else {
+        $("#reportButton1").attr('disabled', false);
+    }
+    if(active=='Others') {
+        $("#reportButton3").attr('disabled', true);
+    }
+    else {
+        $("#reportButton3").attr('disabled', false);
+    }
+    
+}
+
+function openNextSection() {
+    if (active=='Avenue')
+    sectionName = 'Others';
+    else if(active=='Others')
+    sectionName = 'Others';
+    else if(active=='Admin')
+    sectionName = 'Avenue';
+    active=sectionName;
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) 
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) 
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // document.getElementById(sectionName).style.display = "block";
+    // evt.currentTarget.className += " active";
+    document.getElementById(sectionName+"Link").className+= " active";
+    document.getElementById(sectionName).style.display = "block";
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    
+    if(active=='Admin') {
+        $("#reportButton1").attr('disabled', true);
+    }
+    else {
+        $("#reportButton1").attr('disabled', false);
+    }
+    if(active=='Others') {
+        $("#reportButton3").attr('disabled', true);
+    }
+    else {
+        $("#reportButton3").attr('disabled', false);
+    }
+    
+}
+
 
 function openNav() {
     let x = document.getElementById("mynavigation");
@@ -314,7 +432,7 @@ function appendEvent() {
             <input type="text">
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-btc" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
+            <p class="label"><i class="fa fa-inr" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
             <input type="text" value="Rs. ">
         </div>
         <div class="col-lg-5">
@@ -361,4 +479,7 @@ function deleteRow(dataType, clicked) {
     console.log(dataType+" deleted");
 }; 
 
+function resetRow(dataType, clicked) {
+    $('#'+clicked+' :input').val('');
+}
 

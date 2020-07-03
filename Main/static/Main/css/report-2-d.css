@@ -211,6 +211,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   .col-lg-6 select {
@@ -223,6 +224,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   .col-lg-2 select {
@@ -235,6 +237,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   .col-lg-8 select {
@@ -247,6 +250,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   .col-lg-4 select {
@@ -259,6 +263,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   .col-lg-5 select {
@@ -271,6 +276,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   select:focus, select:after, select:hover {
@@ -283,6 +289,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: none;
   }
   .label {
@@ -314,6 +321,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
   input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover {
@@ -323,6 +331,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: none;
   }
   input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus {
@@ -332,6 +341,7 @@
     color: #337ab7;
     background-color: #F5F5F5;
     padding-left: 1vw;
+    padding-right: 1vw;
     box-shadow: none;
   }
   .col-xs-2 p {
@@ -369,5 +379,15 @@
     margin: 0;
     width: 100%;
     margin-bottom: 10vw;
+  }
+  #reportButton1:disabled, #reportButton2:disabled, #reportButton3:disabled {
+    background-color: #555;
+    border: 2px solid #555;
+  }
+  #reportButton1:focus, #reportButton2:focus, #reportButton3:focus {
+    outline: none;
+  }
+  button:focus {
+    outline: none;
   }
 }

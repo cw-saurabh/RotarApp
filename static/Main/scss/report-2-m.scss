@@ -125,6 +125,7 @@
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;    
 }
 
@@ -156,6 +157,7 @@
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;    
 }
 
@@ -187,6 +189,7 @@
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;    
 }
 .col-lg-8 input,button {
@@ -217,6 +220,7 @@
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;    
 }
 
@@ -248,6 +252,7 @@
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;    
 }
 
@@ -283,6 +288,7 @@ select:focus, select:after, select:hover {
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:1vw;
+    padding-right:1vw;
     box-shadow: none;
 }
 
@@ -295,6 +301,7 @@ input[type=text],textarea, input[type=date], input[type=password] {
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:3vw;
+    padding-right:1vw;
     box-shadow: 2px 2px 2px #555;
     
 }
@@ -306,6 +313,7 @@ input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:3vw;
+    padding-right:1vw;
     box-shadow: none;
 }
 
@@ -316,6 +324,7 @@ input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=d
     color: $textcolor1;
     background-color: $bgcolor;
     padding-left:3vw;
+    padding-right:1vw;
     box-shadow: none;
 }
 

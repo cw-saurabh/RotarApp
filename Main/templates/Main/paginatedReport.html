@@ -27,13 +27,13 @@
     </div>     -->
     <div class="row" style="margin:0">
         <div class="col-lg-4 col-xs-4 text-center">
-            <p class="tablinks active" onclick="openSection(event, 'Admin')">Admin</p>
+            <p class="tablinks active" id="AdminLink" onclick="openSection('Admin')">Admin</p>
         </div>
         <div class="col-lg-4 col-xs-4 text-center">
-            <p class="tablinks" onclick="openSection(event, 'Avenue')">Avenue</p>
+            <p class="tablinks" id="AvenueLink" onclick="openSection('Avenue')">Avenue</p>
         </div>
         <div class="col-lg-4 col-xs-4 text-center">
-            <p class="tablinks" onclick="openSection(event, 'Others')">Others</p>
+            <p class="tablinks" id="OthersLink" onclick="openSection('Others')">Others</p>
         </div>
     </div>
     <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
@@ -60,13 +60,13 @@
 <div class="container" id="reportButtons">
     <div class="row" style="width:100%;margin:0">
         <div class="col-4">
-            <button type="submit" id="reportButton1">Previous</button>
+            <button id="reportButton1" onclick="openPreviousSection()">Previous</button>
         </div>
         <div class="col-4">
-            <button type="submit" id="reportButton2">Submit</button>
+            <button type="submit" id="reportButton2" disabled>Submit</button>
         </div>
         <div class="col-4">
-            <button type="submit" id="reportButton3">Next</button>
+            <button id="reportButton3" onclick="openNextSection()">Next</button>
         </div>
     </div>
 </div>
