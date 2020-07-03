@@ -4,44 +4,13 @@
 {% load static %}
 
 {% block content %}
-<style>
-/*     
-form {
-  border: 3px solid #f1f1f1;
-  padding: 20px 20px 50px 20px;
 
-  margin: 100px;
+<script>
   
+function loginRedirect() {
+    window.location.href = "{% url 'main-report' %}";
 }
-
-/* Full-width inputs */
-/* input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-} */
-
-/* Set a style for all buttons */
-/* button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 25px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-} */
-
-/* Add a hover effect for buttons */
-/* button:hover {
-  opacity: 0.8;
-} */
-
-
-</style>
+</script>
 
 <div class="" id="loginSection1">
   
@@ -53,7 +22,7 @@ form {
   <br>
   <input type="password" placeholder="Password" name="password" required>      
   <br>
-  <button type="submit" id="loginButton1">Submit</button>
+  <button type="submit" onclick="loginRedirect()" id="loginButton1">Submit</button>
   
 </div>
   

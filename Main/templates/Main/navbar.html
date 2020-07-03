@@ -12,12 +12,13 @@
 {% endif %}
 
 <div class="navigation sticky" id="mynavigation">
+  
   <img id="logo" src="{% static 'Main/images/Group 10@2x.png' %}" alt="Rotaract">
   <div class="desktop">
   
     <a href="{% url 'main-home' %}" id="desktop-home">Home</a>
-    <a href="{% url 'main-report' %}" id="desktop-report">Reporting</a>
-    <a href="{% url 'main-login' %}" id="desktop-login">Login</a>
+    <a href="{% url 'main-login' %}" id="desktop-report">Reporting</a>
+    <!-- <a href="{% url 'main-login' %}" id="desktop-login">Login</a> -->
     <!-- <a href="{% url 'main-zones' %}" id="desktop-zones">Zones</a>
     <a href="{% url 'main-about' %}" id="desktop-about">About Us</a> 
     <a href="{% url 'main-contact' %}" id="desktop-contact">Contact Us</a>   -->
@@ -25,8 +26,8 @@
   </div>  
   <div class="mobile">
       <a href="{% url 'main-home' %}" id="mobile-home">Home</a>
-      <a href="{% url 'main-report' %}" id="mobile-report">Reporting</a>
-      <a href="{% url 'main-login' %}" id="mobile-login">Login</a>
+      <a href="{% url 'main-login' %}" id="mobile-report">Reporting</a>
+      <!-- <a href="{% url 'main-login' %}" id="mobile-login">Login</a> -->
       <!-- <a href="{% url 'main-zones' %}" id="mobile-zones">Zones</a>
       <a href="{% url 'main-about' %}" id="mobile-about">About Us</a> 
       <a href="{% url 'main-contact' %}" id="mobile-contact">Contact Us</a>   -->
@@ -34,5 +35,6 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>  
+
 </div>
 

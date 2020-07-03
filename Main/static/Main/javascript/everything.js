@@ -30,23 +30,10 @@ $(document).ready(function(){
     appendBoardOfDirectorsMeeting();
     appendFutureEvent();
     appendEvent();
-
-    if(active=='Admin') {
-        $("#reportButton1").attr('disabled', true);
-    }
-    else{
-        $("#reportButton3").attr('disabled', true);
-    }
-    if(active=='Others') {
-        $("#reportButton3").attr('disabled', true);
-    }
-    else {
-        $("#reportButton3").attr('disabled', false);
-    }
+    $("#reportButton11,#reportButton21,#reportButton31").html("Prev");
+    $("#member1Del,#gbm1Del,#bod1Del,#futureEvent1Del,#event1Del").attr('disabled', true);
+    
 });
-
-
-
 
 function openSection(sectionName) {
     active=sectionName;
@@ -67,108 +54,8 @@ function openSection(sectionName) {
     document.getElementById(sectionName).style.display = "block";
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-
-    
-    if(active=='Admin') {
-        $("#reportButton1").attr('disabled', true);
-    }
-    else {
-        $("#reportButton1").attr('disabled', false);
-    }
-    if(active=='Others') {
-        $("#reportButton3").attr('disabled', true);
-    }
-    else {
-        $("#reportButton3").attr('disabled', false);
-    }
     
 }
-
-function openPreviousSection() {
-    if (active=='Avenue')
-    sectionName = 'Admin';
-    else if(active=='Others')
-    sectionName = 'Avenue';
-    else if(active=='Admin')
-    sectionName = 'Admin';
-    active=sectionName;
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) 
-    {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) 
-    {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    // document.getElementById(sectionName).style.display = "block";
-    // evt.currentTarget.className += " active";
-    document.getElementById(sectionName+"Link").className+= " active";
-    document.getElementById(sectionName).style.display = "block";
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-
-    
-    if(active=='Admin') {
-        $("#reportButton1").attr('disabled', true);
-    }
-    else {
-        $("#reportButton1").attr('disabled', false);
-    }
-    if(active=='Others') {
-        $("#reportButton3").attr('disabled', true);
-    }
-    else {
-        $("#reportButton3").attr('disabled', false);
-    }
-    
-}
-
-function openNextSection() {
-    if (active=='Avenue')
-    sectionName = 'Others';
-    else if(active=='Others')
-    sectionName = 'Others';
-    else if(active=='Admin')
-    sectionName = 'Avenue';
-    active=sectionName;
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) 
-    {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) 
-    {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    // document.getElementById(sectionName).style.display = "block";
-    // evt.currentTarget.className += " active";
-    document.getElementById(sectionName+"Link").className+= " active";
-    document.getElementById(sectionName).style.display = "block";
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-
-    
-    if(active=='Admin') {
-        $("#reportButton1").attr('disabled', true);
-    }
-    else {
-        $("#reportButton1").attr('disabled', false);
-    }
-    if(active=='Others') {
-        $("#reportButton3").attr('disabled', true);
-    }
-    else {
-        $("#reportButton3").attr('disabled', false);
-    }
-    
-}
-
-
 function openNav() {
     let x = document.getElementById("mynavigation");
     if (x.className === "navigation sticky") 
@@ -253,7 +140,7 @@ function appendMember() {
         </div>   
         <div class="col-lg-3">
             <br>
-            <button type="button" id="member`+membersIndex+`" onclick="deleteRow('member',this.id)">Delete Row</button>
+            <button type="button" id="member`+membersIndex+`Del" onclick="deleteRow('member',this.id)">Delete Row</button>
         </div>
         <div class="col-lg-12">
             <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
@@ -300,11 +187,11 @@ function appendGeneralBodyMeeting() {
         </div>
         <div class="col-lg-3">
             <br>
-            <button type="button" id="gbm`+gbmsIndex+`" onclick="resetRow('gbm',this.id)">Reset Row</button>
+            <button type="button" id="gbm`+gbmsIndex+`Res" onclick="resetRow('gbm',this.id)">Reset Row</button>
         </div>
         <div class="col-lg-3">
             <br>
-            <button type="button" id="gbm`+gbmsIndex+`" onclick="deleteRow('gbm',this.id)">Delete Row</button>
+            <button type="button" id="gbm`+gbmsIndex+`Del" onclick="deleteRow('gbm',this.id)">Delete Row</button>
         </div>
         <div class="col-lg-12">
             <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
@@ -351,11 +238,11 @@ function appendBoardOfDirectorsMeeting() {
         </div>
         <div class="col-lg-3">
             <br>
-            <button type="button" id="bod`+bodsIndex+`" onclick="resetRow('bod',this.id)">Reset Row</button>
+            <button type="button" id="bod`+bodsIndex+`Res" onclick="resetRow('bod',this.id)">Reset Row</button>
         </div>
         <div class="col-lg-3">
             <br>
-            <button type="button" id="bod`+bodsIndex+`" onclick="deleteRow('bod',this.id)">Delete Row</button>
+            <button type="button" id="bod`+bodsIndex+`Del" onclick="deleteRow('bod',this.id)">Delete Row</button>
         </div>
         <div class="col-lg-12">
             <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
@@ -390,7 +277,7 @@ function appendFutureEvent() {
         </div>
         <div class="col-lg-2">
             <br>
-            <button type="button" id="futureEvent`+futureEventsIndex+`" onclick="deleteRow('futureEvents',this.id)">Delete Row</button>
+            <button type="button" id="futureEvent`+futureEventsIndex+`Del" onclick="deleteRow('futureEvents',this.id)">Delete Row</button>
         </div>
         <div class="col-lg-12">
             <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
@@ -445,7 +332,7 @@ function appendEvent() {
         </div>
         <div class="col-lg-2">
             <br>
-            <button type="button" id="event`+eventsIndex+`" onclick="deleteRow('events',this.id)">Delete Row</button>
+            <button type="button" id="event`+eventsIndex+`Del" onclick="deleteRow('events',this.id)">Delete Row</button>
         </div>
         <div class="col-lg-12">
             <hr style="border-width : thin; border-color:grey;border-radius : 4px;">
@@ -475,11 +362,12 @@ function deleteRow(dataType, clicked) {
     {
         futureEventsCount-=1;
     } 
-    $('#'+clicked).html("");
+    $('#'+clicked.replace("Del", "")).html("");
     console.log(dataType+" deleted");
 }; 
 
 function resetRow(dataType, clicked) {
-    $('#'+clicked+' :input').val('');
+    $('#'+clicked.replace("Res", "")+' :input').val('');
+    
 }
 
