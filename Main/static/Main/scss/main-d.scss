@@ -5,6 +5,8 @@ body,html {
     height: 100%;
     background: $bgcolor;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    padding-bottom:0;
+    margin-bottom:0;
 }
 
 p, div, h1, h2, h3, h4, h5, h6, a, span {
@@ -35,6 +37,8 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     width:98%;
     margin: 0 auto;
     // padding-top: 12em;
+    padding-bottom:0;
+    margin-bottom:0;
 }
 
 // HomePage - Touch at your own risk
@@ -61,7 +65,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
 .homeImage1 {
     margin-left:5vw;
     width: 40vw;
-    height: 35vw;
+    height: 40vw;
 }
 
 // Login-page

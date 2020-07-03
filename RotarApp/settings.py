@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'RotarApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodatabase',
+        'NAME': 'rotarapp',
         'USER': 'root',
         'HOST': 'localhost',
         'PORT': '3306',

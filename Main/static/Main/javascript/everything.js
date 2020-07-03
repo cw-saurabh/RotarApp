@@ -17,7 +17,7 @@ $(document).ready(function(){
         $("#data02").html("<p class=\"text-center\">Female");
         $("#data03").html("<p class=\"text-center\">Other");
         $("#data04").html("<p class=\"text-center\">Total");
-        $("#data10").html("<p>Members at the beginning");
+        $("#data10").html("<p>Members at the beginning of July");
         $("#data20").html("<p>Members Added");
         $("#data30").html("<p>Members Left");
         $("#data40").html("<p>Prospective");
@@ -158,14 +158,10 @@ function appendGeneralBodyMeeting() {
             <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
             <input type="date">
         </div>   
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
             <input type="text">
         </div>
-        <div class="col-lg-2">
-            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
-            <input type="text">
-        </div>    
         <div class="col-lg-2">
             <p class="label">ByLaws Passed?</p><br>
             <select name="type" id="byLaws">
@@ -180,12 +176,15 @@ function appendGeneralBodyMeeting() {
                 <option selected>No</option>
             </select>
         </div>
-        <div class="col-lg-6">
-            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
             <input type="text">
         </div>
-        
-        <div class="col-lg-2">
+        <div class="col-lg-3">
+            <br>
+            <button type="button" id="gbm`+gbmsIndex+`" onclick="resetRow('gbm',this.id)">Reset Row</button>
+        </div>
+        <div class="col-lg-3">
             <br>
             <button type="button" id="gbm`+gbmsIndex+`" onclick="deleteRow('gbm',this.id)">Delete Row</button>
         </div>
@@ -210,14 +209,10 @@ function appendBoardOfDirectorsMeeting() {
             <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
             <input type="date">
         </div>   
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
             <input type="text">
         </div>
-        <div class="col-lg-2">
-            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
-            <input type="text">
-        </div>    
         <div class="col-lg-2">
             <p class="label">ByLaws Passed?</p><br>
             <select name="type" id="byLaws">
@@ -232,12 +227,15 @@ function appendBoardOfDirectorsMeeting() {
                 <option selected>No</option>
             </select>
         </div>
-        <div class="col-lg-6">
-            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
+        <div class="col-lg-2">
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
             <input type="text">
         </div>
-        
-        <div class="col-lg-2">
+        <div class="col-lg-3">
+            <br>
+            <button type="button" id="bod`+bodsIndex+`" onclick="resetRow('bod',this.id)">Reset Row</button>
+        </div>
+        <div class="col-lg-3">
             <br>
             <button type="button" id="bod`+bodsIndex+`" onclick="deleteRow('bod',this.id)">Delete Row</button>
         </div>
@@ -265,10 +263,10 @@ function appendFutureEvent() {
         <div class="col-lg-2">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
             <select name="avenue" id="avenue">
-                <option>CMD</option>
-                <option>CSD</option>
-                <option>ISD</option>
-                <option>PDD</option>
+                <option>Community Service Director</option>
+                <option>Club Service Director</option>
+                <option>International Service Director</option>
+                <option>Professional Development Director</option>
                 <option style="display:none" selected></option>
             </select>
         </div>
@@ -293,17 +291,17 @@ function appendEvent() {
             <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
             <input type="date">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-3">
             <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Name of the Event</p><br>
             <input type="text">
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
             <select name="avenue" id="avenue">
-                <option>CMD</option>
-                <option>CSD</option>
-                <option>ISD</option>
-                <option>PDD</option>
+                <option>Community Service Director</option>
+                <option>Club Service Director</option>
+                <option>International Service Director</option>
+                <option>Professional Development Director</option>
                 <option style="display:none" selected></option>
             </select>
         </div>
@@ -312,15 +310,19 @@ function appendEvent() {
             <input type="text">
         </div>    
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-btc" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
-            <input type="text">
-        </div>
-        <div class="col-lg-6">
-            <p class="label"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Description</p><br>
+            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs</p><br>
             <input type="text">
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs</p><br>
+            <p class="label"><i class="fa fa-btc" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised</p><br>
+            <input type="text" value="Rs. ">
+        </div>
+        <div class="col-lg-5">
+            <p class="label"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Description</p><br>
+            <input type="text">
+        </div>
+        <div class="col-lg-3">
+            <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link</p><br>
             <input type="text">
         </div>
         <div class="col-lg-2">

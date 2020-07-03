@@ -3,6 +3,8 @@ body, html {
   height: 100%;
   background: #F5F5F5;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 p, div, h1, h2, h3, h4, h5, h6, a, span {
@@ -27,6 +29,8 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
   .container {
     width: 98%;
     margin: 0 auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   #homeSection1 {
     margin: 0;
@@ -47,7 +51,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
   .homeImage1 {
     margin-left: 5vw;
     width: 40vw;
-    height: 35vw;
+    height: 40vw;
   }
   #loginSection1 {
     margin-top: 1vw;
