@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','www.rotaractrid3131.ml','ss0506.pytho
 # Application definition
 
 INSTALLED_APPS = [
-    'Auth.apps.AuthConfig'
+    'Auth.apps.AuthConfig',
     'SecReport.apps.SecreportConfig',
     'Main.apps.MainConfig',
     'django.contrib.admin',

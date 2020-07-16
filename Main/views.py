@@ -6,9 +6,6 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'Main/home.html',{'tab':'home'})
 
-def login(request):
-    return render(request, 'Main/login.html',{'tab':'login'})
-
 def about(request):
     return render(request, 'Main/about.html',{'title':'About Us','tab':'about'})
 
