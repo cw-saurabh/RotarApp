@@ -1,0 +1,64 @@
+{% extends "Main/base.html" %}
+    
+{% load static %}
+
+{% block content %}
+
+<div id="reportForm">
+
+<div id="reportHeadingSection" class="text-center">
+    <h4 id="reportHeading1"><b>Secretarial Reporting</b></h4>
+    <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract">
+    <h4 id="reportHeading2"><b>Rotaract Club Of Panvel Central<br><h5>Zone 1 - 214399</h5></b></h4>
+</div>
+
+<div class="container" id="tabs">
+    <br>
+    <div class="progress" style="margin:0">
+        <div class="progress-bar" style="margin:0;width:70%;background-color:#D41367;height:1vw"></div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-3 segment"></div>
+        <div class="col-1 nodes"></div>
+        <div class="col-2 segment"></div>
+        <div class="col-1 nodes"></div>
+        <div class="col-2 segment"></div>
+        <div class="col-1 nodes"></div>
+    </div>     -->
+    <div class="row" style="margin:0">
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks active" id="AdminLink" onclick="openSection('Admin')">Admin</p>
+        </div>
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks" id="AvenueLink" onclick="openSection('Avenue')">Avenue</p>
+        </div>
+        <div class="col-lg-4 col-xs-4 text-center">
+            <p class="tablinks" id="OthersLink" onclick="openSection('Others')">Others</p>
+        </div>
+    </div>
+    <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
+    <br>
+</div>
+
+<div id="Admin" class="tabcontent active">
+    <br><br>
+    {% include "SecReport/admin.html" %}
+    <br><br>
+</div>
+
+<div id="Avenue" class="tabcontent">
+    <br><br>
+    {% include "SecReport/avenue.html" %}
+    <br><br>
+</div>
+
+<div id="Others" class="tabcontent">
+    <br><br>
+    {% include "SecReport/others.html" %}
+    <br><br>
+</div>
+
+</div>
+
+{% endblock content%}
+

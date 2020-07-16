@@ -30,6 +30,7 @@ $(document).ready(function(){
     appendBoardOfDirectorsMeeting();
     appendFutureEvent();
     appendEvent();
+    
     $("#reportButton11,#reportButton21,#reportButton31").html("Prev");
     $("#member1Del,#gbm1Del,#bod1Del,#futureEvent1Del,#event1Del").attr('disabled', true);
     

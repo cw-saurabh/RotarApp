@@ -19,9 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h5l%fev*eb22%3!2wf0e^&57-c^ke5c__5ea8kj-phdabqs)4p'
-# with open('RotarApp/etc/secret_key.txt') as f:
-#     SECRET_KEY = f.read().strip()
+with open('RotarApp/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +30,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','www.rotaractrid3131.ml','ss0506.pytho
 # Application definition
 
 INSTALLED_APPS = [
+    'Auth.apps.AuthConfig'
+    'SecReport.apps.SecreportConfig',
     'Main.apps.MainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
