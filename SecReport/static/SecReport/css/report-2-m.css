@@ -44,6 +44,15 @@
     color: #337ab7;
     font-size: 4vw;
   }
+  #reportForm #errorMessages {
+    color: red;
+    font-weight: bold;
+    font-size: 3vw;
+  }
+  #reportForm #errorMessages p {
+    margin-top: 4vw;
+    margin-bottom: 0vw;
+  }
   #reportForm .heading {
     width: 100%;
     background-color: #337ab7;
@@ -62,24 +71,13 @@
   #reportForm .container-fluid {
     padding: 8vw;
   }
-  .container-fluid {
-    border: 2px solid #337ab7;
-    border-radius: 10px;
-    outline: none;
-    color: #337ab7;
-  }
-  .m-subHeading {
-    color: #D41367;
-    font-weight: bold;
-    font-size: 4vw;
-  }
-  .col-lg-3 input, .col-lg-6 input, .col-lg-2 input, .col-lg-8 input, .col-lg-4 input, .col-lg-5 input {
+  #reportForm .col-lg-2 input, #reportForm .col-lg-2 button, #reportForm .col-lg-3 input, #reportForm .col-lg-3 button, #reportForm .col-lg-4 input, #reportForm .col-lg-4 button, #reportForm .col-lg-5 input, #reportForm .col-lg-5 button, #reportForm .col-lg-6 input, #reportForm .col-lg-6 button, #reportForm .col-lg-8 input, #reportForm .col-lg-8 button {
     margin-top: 5vw;
     margin-bottom: 5vw;
     width: 100%;
     height: 7vw;
   }
-  .col-lg-3 button, .col-lg-6 button, .col-lg-2 button, .col-lg-8 button, .col-lg-4 button, .col-lg-5 button {
+  #reportForm .col-lg-2 button, #reportForm .col-lg-3 button, #reportForm .col-lg-4 button, #reportForm .col-lg-5 button, #reportForm .col-lg-6 button, #reportForm .col-lg-8 button {
     width: 100%;
     color: white;
     font-weight: bold;
@@ -89,7 +87,7 @@
     box-shadow: 2px 2px 2px #555;
     margin: 1vw 0vw 1vw 0vw;
   }
-  .col-lg-3 select, .col-lg-6 select, .col-lg-2 select, .col-lg-8 select, .col-lg-4 select, .col-lg-5 select {
+  #reportForm .col-lg-2 select, #reportForm .col-lg-3 select, #reportForm .col-lg-4 select, #reportForm .col-lg-5 select, #reportForm .col-lg-6 select, #reportForm .col-lg-8 select {
     margin-top: 5vw;
     margin-bottom: 5vw;
     height: 7vw;
@@ -102,7 +100,24 @@
     padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
-  .col-lg-3 select:focus, .col-lg-3 select:after, .col-lg-3 select:hover, .col-lg-6 select:focus, .col-lg-6 select:after, .col-lg-6 select:hover, .col-lg-2 select:focus, .col-lg-2 select:after, .col-lg-2 select:hover, .col-lg-8 select:focus, .col-lg-8 select:after, .col-lg-8 select:hover, .col-lg-4 select:focus, .col-lg-4 select:after, .col-lg-4 select:hover, .col-lg-5 select:focus, .col-lg-5 select:after, .col-lg-5 select:hover {
+  #reportForm .label {
+    color: #337ab7;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    padding: 0;
+  }
+  #reportForm hr {
+    width: 90%;
+    margin: 10vw auto 10vw auto;
+  }
+  #reportForm .m-subHeading {
+    color: #D41367;
+    font-weight: bold;
+    font-size: 4vw;
+  }
+  #reportForm select:focus, #reportForm select:after, #reportForm select:hover {
     margin-top: 1vw;
     margin-bottom: 1vw;
     height: 7vw;
@@ -115,25 +130,7 @@
     padding-right: 1vw;
     box-shadow: none;
   }
-  .m-memberMatrix {
-    padding-left: 5vw;
-    height: 7vw;
-    line-height: 7vw;
-    margin-top: 3vw;
-  }
-  .label {
-    color: #337ab7;
-    font-size: 3vw;
-    font-weight: bold;
-    margin-top: 10vw;
-    margin-bottom: 10vw;
-    padding: 0;
-  }
-  hr {
-    width: 90%;
-    margin: 10vw auto 10vw auto;
-  }
-  input[type=text], textarea, input[type=date], input[type=password] {
+  #reportForm input[type=text], #reportForm textarea, #reportForm input[type=date], #reportForm input[type=password] {
     height: 7vw;
     width: 100%;
     border: 1px solid lightgrey;
@@ -144,7 +141,7 @@
     padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
-  input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus {
+  #reportForm input[type=text]:hover, #reportForm textarea:hover, #reportForm input[type=password]:hover, #reportForm input[type=date]:hover, #reportForm input[type=text]:focus, #reportForm textarea:focus, #reportForm input[type=password]:focus, #reportForm input[type=date]:focus {
     border: 2px solid #337ab7;
     border-radius: 4px;
     outline: none;
@@ -154,7 +151,7 @@
     padding-right: 1vw;
     box-shadow: none;
   }
-  .addRow {
+  #reportForm .addRow {
     height: 7vw;
     width: 100%;
     margin: 1vw 0 1vw 0;
@@ -165,20 +162,27 @@
     background-color: #D41367;
     box-shadow: 2px 2px 2px #555;
   }
-  #member1Del:disabled, #gbm1Del:disabled, #bod1Del:disabled, #futureEvent1Del:disabled, #event1Del:disabled {
+  #reportForm #member1Del:disabled, #reportForm #gbm1Del:disabled, #reportForm #bod1Del:disabled, #reportForm #futureEvent1Del:disabled, #reportForm #event1Del:disabled {
     display: none;
   }
-  .m-memberMatrix input[type=text]:focus, .m-memberMatrix input[type=text]:hover, .m-memberMatrix input[type=text], .m-memberMatrix input {
+  #reportForm .m-memberMatrix {
+    line-height: 7vw;
+    margin-top: 3vw;
+  }
+  #reportForm .m-memberMatrix input[type=text]:focus, #reportForm .m-memberMatrix input[type=text]:hover, #reportForm .m-memberMatrix input[type=text], #reportForm .m-memberMatrix input {
     font-size: 3vw;
     padding-left: 2vw;
     font-weight: bold;
-    width: 6vw;
+    width: 7vw;
   }
-  textarea {
+  #reportForm textarea {
     width: 100%;
     height: 20vw;
   }
-  #reportButton11, #reportButton12, #reportButton13, #reportButton21, #reportButton22, #reportButton23, #reportButton31, #reportButton32, #reportButton33 {
+  #reportForm button:focus {
+    outline: none;
+  }
+  #reportForm #reportButton00, #reportForm #reportButton01, #reportForm #reportButton02, #reportForm #reportButton10, #reportForm #reportButton11, #reportForm #reportButton12, #reportForm #reportButton20, #reportForm #reportButton21, #reportForm #reportButton22 {
     background-color: #337ab7;
     color: white;
     font-weight: bold;
@@ -189,17 +193,36 @@
     box-shadow: 3px 3px 2px #555;
     font-size: 3vw;
   }
-  #reportButtons {
+  #reportForm #reportButtons {
     padding: 0;
     margin: 0;
     width: 100%;
     padding-bottom: 20vw;
   }
-  #reportButton11:disabled, #reportButton12:disabled, #reportButton13:disabled, #reportButton21:disabled, #reportButton22:disabled, #reportButton23#reportButton31:disabled:disabled, #reportButton32:disabled, #reportButton33:disabled {
+  #reportForm #reportButton00:disabled, #reportForm #reportButton01:disabled, #reportForm #reportButton02:disabled, #reportForm #reportButton10:disabled, #reportForm #reportButton11:disabled, #reportForm #reportButton12#reportButton20:disabled:disabled, #reportForm #reportButton21:disabled, #reportForm #reportButton22:disabled {
     background-color: #555;
     border: 2px solid #555;
   }
-  button:focus, #reportButton11:focus, #reportButton12:focus, #reportButton13:focus, #reportButton21:focus, #reportButton22:focus, #reportButton23#reportButton31:focus:focus, #reportButton32:focus, #reportButton33:focus {
+  #reportForm #reportButton00:focus, #reportForm #reportButton01:focus, #reportForm #reportButton02:focus, #reportForm #reportButton10:focus, #reportForm #reportButton11:focus, #reportForm #reportButton12:focus, #reportForm #reportButton20:focus, #reportForm #reportButton21:focus, #reportForm #reportButton22:focus {
     outline: none;
+  }
+  #reportForm input.empty {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid red;
+    color: red;
+  }
+  #reportForm input.empty[type=text]:hover, #reportForm textarea.empty:hover, #reportForm input.empty[type=date]:hover, #reportForm input.empty[type=text]:focus, #reportForm textarea.empty:focus, #reportForm input.empty[type=password]:focus, #reportForm input.empty[type=date]:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+  }
+  .container-fluid {
+    border: 2px solid #337ab7;
+    border-radius: 10px;
+    outline: none;
+    color: #337ab7;
   }
 }

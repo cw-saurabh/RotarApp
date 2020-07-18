@@ -15,7 +15,7 @@
     <div class="text-center mobile m-subHeading">
         Member-Matrix
         <br>
-        <p style="font-size:2.2vw;color:#337ab7">{ I : Intial Count, II : Added this month, III : Left, IV : Prospective, V : Guest, VI : Total }
+        <p style="font-size:2.2vw;color:#337ab7">{ I : Intial Count, II : Added this month, III : Left, IV : Prospective, V : Guest, VI : Total } <b style="color:red"> *</b>
         <br><br><br>
     </div>
     <div class="row m-memberMatrix">
@@ -40,16 +40,16 @@
             I.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix00" onchange="updateProgress(this.id)"  id="memberMatrix00">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix01" onchange="updateProgress(this.id)"  id="memberMatrix01">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix02" onchange="updateProgress(this.id)"  id="memberMatrix02">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix03" id="memberMatrix03" readonly>
         </div>
     </div>
     <div class="row m-memberMatrix">
@@ -57,16 +57,16 @@
             II.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix10" onchange="updateProgress(this.id)"  id="memberMatrix10">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix11" onchange="updateProgress(this.id)"  id="memberMatrix11">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix12" onchange="updateProgress(this.id)"  id="memberMatrix12">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix13" id="memberMatrix13" readonly>
         </div>
     </div>
     <div class="row m-memberMatrix">
@@ -74,16 +74,16 @@
             III.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix20" onchange="updateProgress(this.id)"  id="memberMatrix20">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix21" onchange="updateProgress(this.id)"  id="memberMatrix21">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix22" onchange="updateProgress(this.id)"  id="memberMatrix22">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix23" id="memberMatrix23" readonly>
         </div>
     </div>
     <div class="row m-memberMatrix">
@@ -91,16 +91,16 @@
             IV.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix30" onchange="updateProgress(this.id)"  id="memberMatrix30">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix31" onchange="updateProgress(this.id)"  id="memberMatrix31">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix32" onchange="updateProgress(this.id)"  id="memberMatrix32">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix33" id="memberMatrix33" readonly>
         </div>
     </div>
     <div class="row m-memberMatrix">
@@ -108,16 +108,16 @@
             V.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix40" onchange="updateProgress(this.id)"  id="memberMatrix40">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix41" onchange="updateProgress(this.id)"  id="memberMatrix41">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix42" onchange="updateProgress(this.id)"  id="memberMatrix42">
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix43" id="memberMatrix43" readonly>
         </div>
     </div>
     <div class="row m-memberMatrix">
@@ -125,16 +125,16 @@
             VI.
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix50" id="memberMatrix50" readonly>
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix51" id="memberMatrix51" readonly>
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix52" id="memberMatrix52" readonly>
         </div>
         <div class="col-xs-2">
-            <input type="text" >
+            <input type="text" name="memberMatrix53" id="memberMatrix53" readonly>
         </div>
     </div>
     <hr>
@@ -173,23 +173,23 @@
     <div class="row">
         <div class="col-lg-6">
             <p class="label">Dues paid upto last month <br>@ INR 300
-                Per member
+                Per member<b style="color:red"> *</b>
                 </p><br>
-            <input type="text">
+            <input type="text" name="dues00" onchange="updateProgress(this.id)"  id="dues00">
         </div>
         <div class="col-lg-6">
             <p class="label">Payment for new members<br>inducted
-                during this month
+                during this month<b style="color:red"> *</b>
                 </p><br>
-            <input type="text">
+            <input type="text" name="dues01" onchange="updateProgress(this.id)"  id="dues01">
         </div>
         <div class="col-lg-6">
-            <p class="label">New members inducted this month</p><br>
-            <input type="text">
+            <p class="label">New members inducted this month<b style="color:red"> *</b></p><br>
+            <input type="text" name="dues02" onchange="updateProgress(this.id)"  id="dues02">
         </div>
         <div class="col-lg-6">
-            <p class="label">Total District Dues paid</p><br>
-            <input type="text">
+            <p class="label">Total District Dues paid<b style="color:red"> *</b></p><br>
+            <input type="text" name="dues03" onchange="updateProgress(this.id)"  id="dues03">
         </div>
         
     </div>
@@ -199,13 +199,13 @@
 <div class="container" id="reportButtons">
     <div class="row" style="width:100%;margin:0">
         <div class="col-4">
-            <button id="reportButton11" onclick="openSection()" disabled>Previous</button>
+            <button type="button" id="reportButton00" onclick="openSection()" disabled>Previous</button>
         </div>
         <div class="col-4">
-            <button style="display: none;"" id="reportButton12" disabled>Submit</button>
+            <button type="button" style="display: none;"" id="reportButton01" disabled>Submit</button>
         </div>
         <div class="col-4">
-            <button id="reportButton13" onclick="openSection('Avenue')">Next</button>
+            <button type="button" id="reportButton02" onclick="openSection('Avenue')">Next</button>
         </div>
     </div>
 </div>

@@ -1,3 +1,23 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import Group
 
-# Register your models here.
+from .forms import AccountCreationForm, AccountChangeForm
+from .models import Account
+
+class AccountAdmin(UserAdmin):
+    verbose_name_plural = "Accounts"
+    add_form = AccountCreationForm
+    form = AccountChangeForm
+    model = Account
+    list_display = ['username','name','rotaryId']
+    exclude = ('first_name','last_name')
+    fieldsets = (
+        ('Personal info', {'fields': ('username','name', 'email', 'password','rotaryId')}),
+        # ('Important dates', {'fields': ('last_login', 'date_joined')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
+    )
+
+admin.site.register(Account, AccountAdmin)
+admin.site.unregister(Group)

@@ -5,28 +5,28 @@
 <div class="container-fluid table-responsive">
     <div class="row">
         <div class="col-lg-4">
-            <p class="label">Name of Bulletin</p><br>
-            <input type="text">
+            <p class="label">Name of Bulletin<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin00" onchange="updateProgress(this.id)"  id="bulletin00">
         </div>
         <div class="col-lg-4">
-            <p class="label">Type of Bulletin</p><br>
-            <input type="text">
+            <p class="label">Type of Bulletin<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin01" onchange="updateProgress(this.id)"  id="bulletin01">
         </div>
         <div class="col-lg-4">
-            <p class="label">Link</p><br>
-            <input type="text">
+            <p class="label">Link<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin02" onchange="updateProgress(this.id)"  id="bulletin02">
         </div>
         <div class="col-lg-4">
-            <p class="label">Issued on</p><br>
-            <input type="text">
+            <p class="label">Issued on<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin03" onchange="updateProgress(this.id)"  id="bulletin03">
         </div>
         <div class="col-lg-4">
-            <p class="label">Last Issued on</p><br>
-            <input type="text">
+            <p class="label">Last Issued on<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin04" onchange="updateProgress(this.id)"  id="bulletin04">
         </div>
         <div class="col-lg-4">
-            <p class="label">Frequency</p><br>
-            <input type="text">
+            <p class="label">Frequency<b style="color:red"> *</b></p><br>
+            <input type="text" name="bulletin05" onchange="updateProgress(this.id)"  id="bulletin05">
         </div>
         
     </div>
@@ -53,10 +53,10 @@
     <div class="row">
         <div class="col-lg-8">
             <p class="label">Whether you have received <br class="mobile">acknowledgement
-                from the District <br>Reporting Secretary ?</p>
+                from the District <br>Reporting Secretary ?
         </div>
         <div class="col-lg-4">
-            <select name="type" id="byLaws">
+            <select id="byLaws" name="feedback00" onchange="updateProgress(this.id)"  id="feedback00">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
@@ -65,26 +65,26 @@
             <p class="label">Do you get a prompt response from <br>the DZR / AZR ?
         </div>
         <div class="col-lg-4">
-            <select name="type" id="byLaws">
+            <select id="byLaws" name="feedback01" onchange="updateProgress(this.id)"  id="feedback01">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
         </div>
         <div class="col-lg-8">
             <p class="label">Whether you have received receipt for <br>payment
-                of Dues ?                        
+                of Dues ?
         </div>
         <div class="col-lg-4">
-            <select name="type" id="byLaws">
+            <select id="byLaws" name="feedback02" onchange="updateProgress(this.id)"  id="feedback02">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
         </div>
         <div class="col-lg-8">
-            <p class="label">Do you get a timely response from <br>the District ?                        
+            <p class="label">Do you get a timely response from <br>the District ?
         </div>
         <div class="col-lg-4">
-            <select name="type" id="byLaws">
+            <select id="byLaws" name="feedback03" onchange="updateProgress(this.id)"  id="feedback03">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
@@ -99,7 +99,7 @@
 <br>
 <div class="container-fluid table-responsive">
     <div class="row">
-        <textarea rows="5"></textarea>
+        <textarea rows="5" name="suggestion00" onchange="updateProgress(this.id)"  id="suggestion00"></textarea>
     </div>
     <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
 </div> 
@@ -107,13 +107,13 @@
 <div class="container" id="reportButtons">
     <div class="row" style="width:100%;margin:0">
         <div class="col-4">
-            <button id="reportButton31" onclick="openSection('Avenue')">Previous</button>
+            <button id="reportButton20" type="button"  onclick="openSection('Avenue')">Previous</button>
         </div>
         <div class="col-4">
-            <button id="reportButton32" disabled>Submit</button>
+            <button id="reportButton21" type="submit">Submit</button>
         </div>
         <div class="col-4">
-            <button id="reportButton33" onclick="openSection('Avenue')" disabled>Next</button>
+            <button id="reportButton22" type="button"  onclick="openSection('Admin')" disabled>Next</button>
         </div>
     </div>
 </div>

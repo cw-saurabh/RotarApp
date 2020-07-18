@@ -4,18 +4,27 @@
 
 {% block content %}
 
+<script>
+    
+function jaadu() {
+    $("input[type=text]").val("Dummy");    
+}
+
+</script>
+
 <div id="reportForm">
 
 <div id="reportHeadingSection" class="text-center">
-    <h4 id="reportHeading1"><b>Secretarial Reporting</b></h4>
-    <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract">
-    <h4 id="reportHeading2"><b>Rotaract Club Of Panvel Central<br><h5>Zone 1 - 214399</h5></b></h4>
+    <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
+    <!-- <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract"> -->
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
 </div>
 
 <div class="container" id="tabs">
     <br>
-    <div class="progress" style="margin:0">
-        <div class="progress-bar" style="margin:0;width:70%;background-color:#D41367;height:1vw"></div>
+    <div class="progress" style="margin:0;height:1vw">
+        <div class="progress-bar" id="bar"></div>
+        <div id="bubble"></div>
     </div>
     <!-- <div class="row">
         <div class="col-3 segment"></div>
@@ -37,9 +46,14 @@
         </div>
     </div>
     <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
+    <div id="errorMessages">
+        
+    </div>
     <br>
 </div>
 
+<form action="" method="POST">
+{% csrf_token %}
 <div id="Admin" class="tabcontent active">
     <br><br>
     {% include "SecReport/admin.html" %}
@@ -59,6 +73,8 @@
 </div>
 
 </div>
+
+</form>
 
 {% endblock content%}
 

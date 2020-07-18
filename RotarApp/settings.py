@@ -89,6 +89,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'Auth.Account'
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -126,3 +128,18 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = '/home/ss0506/RotarApp/static'
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'main-home'
+LOGOUT_REDIRECT_URL = 'main-home'
+LOGIN_URL = '/login'
+
+# Credentials :
+# Username: admin
+# Rotary Id: 0
+# Email address: admin@gmail.com
+# Password: babubhaiya
+
+# Username: panvelcentral
+# Rotary Id: 214399
+# Email address: rotaractclubpanvelcentral@gmail.com
+# Password: babubhaiya

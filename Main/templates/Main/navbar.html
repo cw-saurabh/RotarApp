@@ -17,8 +17,13 @@
   <div class="desktop">
   
     <a href="{% url 'main-home' %}" id="desktop-home">Home</a>
-    <a href="{% url 'login' %}" id="desktop-report">Reporting</a>
-    <!-- <a href="{% url 'login' %}" id="desktop-login">Login</a> -->
+    {% if user.is_authenticated %}
+    <a href="{% url 'report' %}" id="desktop-report">Reporting</a>
+    <a href="{% url 'passwordChange' %}" id="desktop-profile">Profile</a>
+    <a href="{% url 'logout' %}" id="desktop-logout">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}" id="desktop-login">Login</a>
+    {% endif %}
     <!-- <a href="{% url 'main-zones' %}" id="desktop-zones">Zones</a>
     <a href="{% url 'main-about' %}" id="desktop-about">About Us</a> 
     <a href="{% url 'main-contact' %}" id="desktop-contact">Contact Us</a>   -->
@@ -26,8 +31,13 @@
   </div>  
   <div class="mobile">
       <a href="{% url 'main-home' %}" id="mobile-home">Home</a>
-      <a href="{% url 'login' %}" id="mobile-report">Reporting</a>
-      <!-- <a href="{% url 'login' %}" id="mobile-login">Login</a> -->
+      {% if user.is_authenticated %}
+      <a href="{% url 'report' %}" id="mobile-report">Reporting</a>
+      <a href="{% url 'passwordChange' %}" id="mobile-profile">Profile</a>
+      <a href="{% url 'logout' %}" id="mobile-logout">Logout</a>
+      {% else %}
+      <a href="{% url 'login' %}" id="mobile-login">Login</a>
+      {% endif %}
       <!-- <a href="{% url 'main-zones' %}" id="mobile-zones">Zones</a>
       <a href="{% url 'main-about' %}" id="mobile-about">About Us</a> 
       <a href="{% url 'main-contact' %}" id="mobile-contact">Contact Us</a>   -->

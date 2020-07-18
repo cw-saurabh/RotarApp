@@ -23,6 +23,18 @@
     width:100%;
 }
 
+.progress {
+    height:10vw;
+    padding:0;
+}
+
+#bar {
+    margin:0;
+    background-color:#D41367;
+    height:1vw; 
+    width:100%;
+}
+
 @media screen and (min-width: 1000px) {
 
 //Pagination
@@ -100,6 +112,13 @@
 
 #reportForm {
 
+    #errorMessages {
+        color : red;
+        font-weight : bold;
+        font-size : $d-small;
+        
+    }
+
     .heading {
         width: 100%;
         background-color: $textcolor1;
@@ -131,77 +150,142 @@
         color: white;       
     }
 
-}
+    .col-lg-3, .col-lg-6, .col-lg-2, .col-lg-8, .col-lg-4, .col-lg-5 {
 
-.col-lg-3, .col-lg-6, .col-lg-2, .col-lg-8, .col-lg-4, .col-lg-5 {
-
-    padding:1vw 1vw 1vw 1vw;
-
-    input {
-        margin-top:1vw;
-        margin-bottom:1vw;
-        width:100%;
-        height:5vw;
+        padding:1vw 1vw 1vw 1vw;
+    
+        input {
+            margin-top:1vw;
+            margin-bottom:1vw;
+            width:100%;
+            height:5vw;
+        }
+    
+        button {
+            width:100%;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            border : solid $pinkcolor;
+            background-color: $pinkcolor;
+            box-shadow: 2px 2px 2px #555;
+            margin:1vw 0vw 1vw 0vw;
+        }
+    
+        select {
+            margin-top:1vw;
+            margin-bottom:1vw;
+            height: 2.5vw;
+            width:100%;
+            border: 1px solid lightgrey;
+            border-radius: 4px;
+            color: $textcolor1;
+            background-color: $bgcolor;
+            padding-left:1vw;
+            padding-right:1vw;
+            box-shadow: 2px 2px 2px #555;    
+        }
+    
+        select:focus, select:after, select:hover {    
+            margin-top:1vw;
+            margin-bottom:1vw;
+            height: 2.5vw;
+            width:100%;
+            border: 2px solid $textcolor1;
+            border-radius: 4px;
+            color: $textcolor1;
+            background-color: $bgcolor;
+            padding-left:1vw;
+            padding-right:1vw;
+            box-shadow: none;
+        }
     }
-
-    button {
-        width:100%;
+    
+    .label {
+        color : $textcolor1;
+        font-size: $d-extraSmall;
+        font-weight: bold;
+        margin:0;
+        padding:0;
+    }
+    
+    .addRow {
+        height: 2.5vw;
+        width: 10vw;
+        margin:1vw 0 1vw 0 ;
         color: white;
         font-weight: bold;
         border-radius: 4px;
         border : solid $pinkcolor;
         background-color: $pinkcolor;
         box-shadow: 2px 2px 2px #555;
-        margin:1vw 0vw 1vw 0vw;
     }
 
-    select {
-        margin-top:1vw;
-        margin-bottom:1vw;
-        height: 2.5vw;
-        width:100%;
+        
+    input[type=text], input[type=date], input[type=password], textarea {
+        height : 2.5vw;
         border: 1px solid lightgrey;
         border-radius: 4px;
         color: $textcolor1;
         background-color: $bgcolor;
         padding-left:1vw;
         padding-right:1vw;
-        box-shadow: 2px 2px 2px #555;    
+        box-shadow: 2px 2px 2px #555;
     }
 
-    select:focus, select:after, select:hover {    
-        margin-top:1vw;
-        margin-bottom:1vw;
-        height: 2.5vw;
-        width:100%;
+    input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus {
         border: 2px solid $textcolor1;
         border-radius: 4px;
+        outline: none;
         color: $textcolor1;
         background-color: $bgcolor;
         padding-left:1vw;
         padding-right:1vw;
         box-shadow: none;
+        font-weight: bold;
     }
-}
 
-.label {
-    color : $textcolor1;
-    font-size: $d-extraSmall;
-    font-weight: bold;
-    margin:0;
-    padding:0;
-}
+    input.empty{
+        outline : none;
+        box-shadow: none;
+        border: 1px solid red;
+        color : red;    
+    }
 
-.addRow {
-    height: 2.5vw;
-    width: 10vw;
-    margin:1vw 0 1vw 0 ;
-    color: white;
-    font-weight: bold;
-    border-radius: 4px;
-    border : solid $pinkcolor;
-    background-color: $pinkcolor;
-    box-shadow: 2px 2px 2px #555;
+    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus {
+        outline : none;
+        box-shadow: none;
+        border: 2px solid red;
+        color : red;
+        font-weight: bold;
+    }
+
+    .col-xs-2 p{
+        color : $textcolor1;
+        font-size: $d-extraSmall;;
+        font-weight: bold;
+    }
+
+    .m-memberMatrix input{
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width:85%;
+    }
+
+    textarea {
+        height: 8vw;
+        width: 100%;
+    }
+
+    
+    button:focus, #reportButton00:focus, #reportButton01:focus, #reportButton02:focus,#reportButton10:focus, #reportButton11:focus, #reportButton12:focus#reportButton20:focus, #reportButton21:focus, #reportButton22:focus{
+        outline: none;
+    }
+
+    
 }
 
 #member1Del:disabled,#gbm1Del:disabled,#bod1Del:disabled,#futureEvent1Del:disabled,#event1Del:disabled {
@@ -209,50 +293,7 @@
     background-color: #555;
     border : solid #555;
 }
-
-input[type=text], input[type=date], input[type=password], textarea {
-    height : 2.5vw;
-    border: 1px solid lightgrey;
-    border-radius: 4px;
-    color: $textcolor1;
-    background-color: $bgcolor;
-    padding-left:1vw;
-    padding-right:1vw;
-    box-shadow: 2px 2px 2px #555;
-}
-
-input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus {
-    border: 2px solid $textcolor1;
-    border-radius: 4px;
-    outline: none;
-    color: $textcolor1;
-    background-color: $bgcolor;
-    padding-left:1vw;
-    padding-right:1vw;
-    box-shadow: none;
-}
-
-.col-xs-2 p{
-    color : $textcolor1;
-    font-size: $d-extraSmall;;
-    font-weight: bold;
-}
-
-.m-memberMatrix input{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width:90%;
-}
-
-textarea {
-    height: 8vw;
-    width: 100%;
-}
-
-#reportButton11,#reportButton12,#reportButton13,#reportButton21,#reportButton22,#reportButton23,#reportButton31,#reportButton32,#reportButton33 {
+#reportButton00,#reportButton01,#reportButton02,#reportButton10,#reportButton11,#reportButton12,#reportButton20,#reportButton21,#reportButton22 {
     background-color: $textcolor1;
     color:white;
     font-weight: bold;
@@ -273,13 +314,9 @@ textarea {
     margin-bottom:10vw;
 }
 
-#reportButton11:disabled, #reportButton12:disabled, #reportButton13:disabled,#reportButton21:disabled, #reportButton22:disabled, #reportButton23:disabled#reportButton31:disabled, #reportButton32:disabled, #reportButton33:disabled{
+#reportButton00:disabled, #reportButton01:disabled, #reportButton02:disabled,#reportButton10:disabled, #reportButton11:disabled, #reportButton12:disabled#reportButton20:disabled, #reportButton21:disabled, #reportButton22:disabled{
     background-color: #555;
     border: 2px solid #555;
-}
-
-button:focus, #reportButton11:focus, #reportButton12:focus, #reportButton13:focus,#reportButton21:focus, #reportButton22:focus, #reportButton23:focus#reportButton31:focus, #reportButton32:focus, #reportButton33:focus{
-    outline: none;
 }
 
 }
