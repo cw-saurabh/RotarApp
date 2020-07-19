@@ -78,10 +78,12 @@
     padding-left:1%;
     padding-right:1%;
     padding-bottom:0;
+    padding-top:0;
 }
 
 .tabcontent.active {
     display:block;
+    padding-top:0;
     padding-bottom:0;
 }
 
@@ -222,7 +224,7 @@
     }
 
         
-    input[type=text], input[type=date], input[type=password], textarea {
+    input[type=text], input[type=date], input[type=month],  input[type=password], textarea {
         height : 2.5vw;
         border: 1px solid lightgrey;
         border-radius: 4px;
@@ -233,7 +235,7 @@
         box-shadow: 2px 2px 2px #555;
     }
 
-    input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus {
+    input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover,  input[type=month]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus,  input[type=month]:focus {
         border: 2px solid $textcolor1;
         border-radius: 4px;
         outline: none;
@@ -252,7 +254,7 @@
         color : red;    
     }
 
-    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus {
+    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=month].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus,  input[type=month].empty:focus {
         outline : none;
         box-shadow: none;
         border: 2px solid red;

@@ -7,7 +7,9 @@
 <script>
     
 function jaadu() {
-    $("input[type=text]").val("Dummy");    
+    $("input[type=text]").val("NA"); 
+    $("#bar").css('width','100%'); 
+    $("#reportButton21").attr('disabled', false);  
 }
 
 </script>
@@ -18,6 +20,7 @@ function jaadu() {
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
     <!-- <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract"> -->
     <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+    
 </div>
 
 <div class="container" id="tabs">
@@ -54,6 +57,18 @@ function jaadu() {
 
 <form action="" method="POST">
 {% csrf_token %}
+
+<div class="row" style="margin:0">
+    <div class="col-lg-3">
+        <p class="label">Reporting for the month of :</p>
+    </div>
+    <br class="mobile"><br class="mobile">
+    <div class="col-lg-3" >
+        <input type="month" style="margin:0" id="month" name="month">
+    </div>
+</div>
+
+
 <div id="Admin" class="tabcontent active">
     <br><br>
     {% include "SecReport/admin.html" %}

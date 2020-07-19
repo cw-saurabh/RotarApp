@@ -63,9 +63,11 @@
     padding-left: 1%;
     padding-right: 1%;
     padding-bottom: 0;
+    padding-top: 0;
   }
   .tabcontent.active {
     display: block;
+    padding-top: 0;
     padding-bottom: 0;
   }
   #reportHeadingSection {
@@ -180,7 +182,7 @@
     background-color: #D41367;
     box-shadow: 2px 2px 2px #555;
   }
-  #reportForm input[type=text], #reportForm input[type=date], #reportForm input[type=password], #reportForm textarea {
+  #reportForm input[type=text], #reportForm input[type=date], #reportForm input[type=month], #reportForm input[type=password], #reportForm textarea {
     height: 2.5vw;
     border: 1px solid lightgrey;
     border-radius: 4px;
@@ -190,7 +192,7 @@
     padding-right: 1vw;
     box-shadow: 2px 2px 2px #555;
   }
-  #reportForm input[type=text]:hover, #reportForm textarea:hover, #reportForm input[type=text]:hover, #reportForm input[type=date]:hover, #reportForm input[type=text]:focus, #reportForm textarea:focus, #reportForm input[type=password]:focus, #reportForm input[type=date]:focus {
+  #reportForm input[type=text]:hover, #reportForm textarea:hover, #reportForm input[type=text]:hover, #reportForm input[type=date]:hover, #reportForm input[type=month]:hover, #reportForm input[type=text]:focus, #reportForm textarea:focus, #reportForm input[type=password]:focus, #reportForm input[type=date]:focus, #reportForm input[type=month]:focus {
     border: 2px solid #337ab7;
     border-radius: 4px;
     outline: none;
@@ -207,7 +209,7 @@
     border: 1px solid red;
     color: red;
   }
-  #reportForm input.empty[type=text]:hover, #reportForm textarea.empty:hover, #reportForm input.empty[type=date]:hover, #reportForm input.empty[type=text]:focus, #reportForm textarea.empty:focus, #reportForm input.empty[type=password]:focus, #reportForm input.empty[type=date]:focus {
+  #reportForm input.empty[type=text]:hover, #reportForm textarea.empty:hover, #reportForm input.empty[type=date]:hover, #reportForm input.empty[type=month]:hover, #reportForm input.empty[type=text]:focus, #reportForm textarea.empty:focus, #reportForm input.empty[type=password]:focus, #reportForm input.empty[type=date]:focus, #reportForm input.empty[type=month]:focus {
     outline: none;
     box-shadow: none;
     border: 2px solid red;

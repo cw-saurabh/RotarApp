@@ -1,0 +1,31 @@
+{% extends "Main/base.html" %}
+    
+{% load static %}
+
+{% block content %}
+<div id="reportForm">
+
+<div id="reportHeadingSection" class="text-center">
+    <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
+    <!-- <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract"> -->
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+</div>
+
+<hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
+<br><br>
+<div class="container" id="tabs">
+    {% if success %}
+        <div class="alert alert-success">
+            <strong>Success!</strong> {{ success }}
+            <br>Your Report Id = {{ reportId }}
+        </div>
+    {% elif error %}
+        <div class="alert alert-danger">
+            <strong>Error !</strong> {{ error }}
+        </div>
+    {% endif%}
+</div>
+
+</div>
+{% endblock content%}
+

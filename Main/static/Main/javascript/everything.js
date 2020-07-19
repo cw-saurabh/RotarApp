@@ -273,7 +273,7 @@ function appendMember() {
         </div>
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Type</p><br>
-            <select name="type" id="member`+membersIndex+`-2" name="member`+membersIndex+`-2">
+            <select id="member`+membersIndex+`-2" name="member`+membersIndex+`-2">
                 <option>Inducted Member</option>
                 <option>Prospective Member</option>
                 <option>Guest Member</option>
@@ -282,7 +282,7 @@ function appendMember() {
         </div>   
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Gender</p><br>
-            <select name="gender" id="member`+membersIndex+`-3" name="member`+membersIndex+`-3">
+            <select id="member`+membersIndex+`-3" name="member`+membersIndex+`-3">
                 <option>Female</option>
                 <option>Male</option>
                 <option>Other</option>
@@ -292,7 +292,7 @@ function appendMember() {
         </div>
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-tint" aria-hidden="true"></i>&nbsp;&nbsp;Blood Group</p><br>
-            <select name="Blood Grouup" id="member`+membersIndex+`-4" name="member`+membersIndex+`-4">
+            <select id="member`+membersIndex+`-4" name="member`+membersIndex+`-4">
                 <option>A +</option>
                 <option>A -</option>
                 <option>A Unknown</option>
@@ -348,14 +348,14 @@ function appendGeneralBodyMeeting() {
         </div>
         <div class="col-lg-2">
             <p class="label">ByLaws Passed?</p><br>
-            <select name="type" id="gbm`+gbmsIndex+`-3" name="gbm`+gbmsIndex+`-3">
+            <select id="gbm`+gbmsIndex+`-3" name="gbm`+gbmsIndex+`-3">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
         </div>
         <div class="col-lg-2">
             <p class="label">Budget Passed?</p><br>
-            <select name="type" id="gbm`+gbmsIndex+`-4" name="gbm`+gbmsIndex+`-4">
+            <select id="gbm`+gbmsIndex+`-4" name="gbm`+gbmsIndex+`-4">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
@@ -399,14 +399,14 @@ function appendBoardOfDirectorsMeeting() {
         </div>
         <div class="col-lg-2">
             <p class="label">ByLaws Passed?</p><br>
-            <select name="type" id="bod`+bodsIndex+`-3" name="bod`+bodsIndex+`-3">
+            <select id="bod`+bodsIndex+`-3" name="bod`+bodsIndex+`-3">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
         </div>
         <div class="col-lg-2">
             <p class="label">Budget Passed?</p><br>
-            <select name="type" id="bod`+bodsIndex+`-4" name="bod`+bodsIndex+`-4">
+            <select id="bod`+bodsIndex+`-4" name="bod`+bodsIndex+`-4">
                 <option>Yes</option>
                 <option selected>No</option>
             </select>
@@ -446,7 +446,7 @@ function appendFutureEvent() {
         </div>
         <div class="col-lg-2">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
-            <select name="avenue" id="futureEvent`+futureEventsIndex+`-2" name="futureEvent`+futureEventsIndex+`-2">
+            <select id="futureEvent`+futureEventsIndex+`-2" name="futureEvent`+futureEventsIndex+`-2">
                 <option>Community Service Director</option>
                 <option>Club Service Director</option>
                 <option>International Service Director</option>
@@ -481,7 +481,7 @@ function appendEvent() {
         </div>
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue</p><br>
-            <select name="avenue" id="event`+eventsIndex+`-2" name="event`+eventsIndex+`-2">
+            <select id="event`+eventsIndex+`-2" name="event`+eventsIndex+`-2">
                 <option>Community Service Director</option>
                 <option>Club Service Director</option>
                 <option>International Service Director</option>
@@ -547,3 +547,33 @@ function resetRow(dataType, clicked) {
     $('#'+clicked.replace("Res", "")+' :input').val('');
 }
 
+
+    // $("#memberMatrix00").val({{ form['memberMatrix00'] }});
+    // $("#memberMatrix01").val({{ form['memberMatrix01'] }});
+    // $("#memberMatrix02").val({{ form['memberMatrix02'] }});
+    // $("#memberMatrix10").val({{ form['memberMatrix10'] }});
+    // $("#memberMatrix11").val({{ form['memberMatrix11'] }});
+    // $("#memberMatrix12").val({{ form['memberMatrix12'] }});
+    // $("#memberMatrix20").val({{ form['memberMatrix20'] }});
+    // $("#memberMatrix21").val({{ form['memberMatrix21'] }});
+    // $("#memberMatrix22").val({{ form['memberMatrix22'] }});
+    // $("#memberMatrix30").val({{ form['memberMatrix30'] }});
+    // $("#memberMatrix31").val({{ form['memberMatrix31'] }});
+    // $("#memberMatrix32").val({{ form['memberMatrix32'] }});
+    // $("#memberMatrix40").val({{ form['memberMatrix40'] }});
+    // $("#memberMatrix41").val({{ form['memberMatrix41'] }});
+    // $("#memberMatrix42").val({{ form['memberMatrix42'] }});
+    // $("#feedback00").val({{ form['feedback00'] }});
+    // $("#feedback01").val({{ form['feedback01'] }});
+    // $("#feedback02").val({{ form['feedback02'] }});
+    // $("#feedback03").val({{ form['feedback03'] }});
+    // $("#bulletin00").val({{ form['bulletin00'] }});
+    // $("#bulletin01").val({{ form['bulletin01'] }});
+    // $("#bulletin02").val({{ form['bulletin02'] }});
+    // $("#bulletin03").val({{ form['bulletin03'] }});
+    // $("#bulletin04").val({{ form['bulletin04'] }});
+    // $("#bulletin05").val({{ form['bulletin05'] }});
+    // $("#dues00").val({{ form['dues00'] }});
+    // $("#dues00").val({{ form['dues01'] }});
+    // $("#dues01").val({{ form['dues02'] }});
+    // $("#dues02").val({{ form['dues03'] }});
