@@ -10,6 +10,7 @@ function jaadu() {
     $("input[type=text]").val("NA"); 
     $("#bar").css('width','100%'); 
     $("#reportButton21").attr('disabled', false);  
+    alert("{{ profile.logo.url }}");
 }
 
 </script>
@@ -18,8 +19,8 @@ function jaadu() {
 
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
-    <!-- <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract"> -->
-    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+    <img id="reportImage1" src="{{STATIC_URL}}{{ profile.logo.url }}" alt="Rotaract">
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>Zone {{ profile.zone }} - {{ user.rotaryId }}</h5></b></h4>
     
 </div>
 

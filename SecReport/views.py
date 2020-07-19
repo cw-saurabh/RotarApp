@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Report
+from Auth.models import Club
 import secrets
 from datetime import datetime
 
@@ -8,10 +9,10 @@ from datetime import datetime
 
 @login_required
 def report(request):
+    profile = Club.objects.filter(account=request.user).first()
     if(request.method == 'POST'):
         try :
-            reportId = request.user.reportId+"-"+request.POST['month']
-            print(reportId)
+            reportId = str(request.user.rotaryId)+"-"+request.POST['month']
             report = Report(club = request.user,
                         month           = datetime.strptime(request.POST['month'], "%Y-%m").date() ,
                         reportId = reportId,
@@ -51,8 +52,8 @@ def report(request):
             return render(request, 'SecReport/paginatedReportResponse.html',{'title':'Reporting','tab':'report','success':'The report has been saved successfully','reportId':report.reportId})        
         except Exception as e:
             print(e)
-            return render(request, 'SecReport/paginatedReport.html',{'title':'Reporting','tab':'report','error':'We are facing an issue. We will get back to you'})        
+            return render(request, 'SecReport/paginatedReportResponse.html',{'title':'Reporting','tab':'report','error':'We are facing an issue. We will get back to you'})        
     else :
         print('Fresh')
-        return render(request, 'SecReport/paginatedReport.html',{'title':'Reporting','tab':'report'})
+        return render(request, 'SecReport/paginatedReport.html',{'title':'Reporting','tab':'report','profile':profile})
 

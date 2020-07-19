@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 
 from .forms import AccountCreationForm, AccountChangeForm
-from .models import Account
+from .models import Account, Club
 
 class AccountAdmin(UserAdmin):
     verbose_name_plural = "Accounts"
@@ -20,4 +20,5 @@ class AccountAdmin(UserAdmin):
     )
 
 admin.site.register(Account, AccountAdmin)
+admin.site.register(Club)
 admin.site.unregister(Group)

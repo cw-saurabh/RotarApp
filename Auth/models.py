@@ -24,11 +24,20 @@ class Account(AbstractUser):
         verbose_name = 'Account'
         verbose_name_plural = 'Accounts'
 
-# class Club(models.Model):
-#     account = models.OneToOneField(Account, on_delete=models.CASCADE, primary_key=True)
-#     clubKey= models.CharField(max_length=32,verbose_name = "Name", default="",blank=True)
-#     zone = models.IntegerField(verbose_name = "Zone")
-#     clubCode = models.IntegerField(verbose_name = "Club Code")
+class Club(models.Model):
+    account = models.OneToOneField(Account, on_delete=models.CASCADE, primary_key=True)
+    clubKey= models .UUIDField(verbose_name="Club Key", default=uuid.uuid4, editable=False)
+    zone = models.IntegerField(verbose_name = "Zone")
+    clubCode = models.IntegerField(verbose_name = "Club Code", blank=True, null=True)
+    logo = models.ImageField(verbose_name="Logo", upload_to="logos", default="logos/district_logo.png")
+    
+    
+    def __str__(self):
+        return f'{self.account.name}'
+
+    class Meta:
+        verbose_name = 'Club Profile'
+        verbose_name_plural = 'Club Profiles'
 
 # class Rotaractor(models.Model):
 #     account = models.OneToOneField(Account, on_delete=models.CASCADE, primary_key=True)
