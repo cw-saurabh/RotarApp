@@ -201,6 +201,22 @@
             padding-right:1vw;
             box-shadow: none;
         }
+
+        select.empty {
+            outline : none;
+            box-shadow: none;
+            border: 1px solid red;
+            color : red;
+            font-weight: bold;
+        }
+
+        select.empty:hover, select.empty:focus, select.empty:after {
+            outline : none;
+            box-shadow: none;
+            border: 2px solid red;
+            color : red;
+            font-weight: bold;
+        }
     }
     
     .label {
@@ -287,14 +303,18 @@
         outline: none;
     }
 
-    
+    #member1Del:disabled,#gbm1Del:disabled,#bod1Del:disabled,#futureEvent1Del:disabled,#event1Del:disabled {
+        // display: none;
+        background-color: #555;
+        border : solid #555;
+    }    
+
+    input[type=text]:read-only {
+        background-color: #f1f1f1f1;
+    }
 }
 
-#member1Del:disabled,#gbm1Del:disabled,#bod1Del:disabled,#futureEvent1Del:disabled,#event1Del:disabled {
-    // display: none;
-    background-color: #555;
-    border : solid #555;
-}
+
 #reportButton00,#reportButton01,#reportButton02,#reportButton10,#reportButton11,#reportButton12,#reportButton20,#reportButton21,#reportButton22 {
     background-color: $textcolor1;
     color:white;

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, PasswordChangeForm
-from .models import Account
+from .models import Account, Club
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 class AccountCreationForm(UserCreationForm):
@@ -40,3 +40,9 @@ class PasswordChange(PasswordChangeForm):
     new_password2 = forms.CharField(required=True,
                     widget=forms.PasswordInput(attrs={
                     'class': 'form-control', 'placeholder': 'Confirm Password'}))
+
+
+class ProfileUpdateForm(forms.ModelForm) :
+    class Meta :
+        model = Club
+        fields = ['zone','logo']       

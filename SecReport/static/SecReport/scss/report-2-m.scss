@@ -127,6 +127,22 @@
             padding-right:1vw;
             box-shadow: 2px 2px 2px #555;    
         }
+        
+        select.empty {
+            outline : none;
+            box-shadow: none;
+            border: 2px solid red;
+            color : red;
+            font-weight: bold;
+        }
+
+        select.empty:hover, select.empty:focus, select.empty:after {
+            outline : none;
+            box-shadow: none;
+            border: 1px solid red;
+            color : red;
+            font-weight: bold;
+        }
     }
     
     .label {
@@ -147,21 +163,6 @@
         color: $pinkcolor;
         font-weight: bold;
         font-size: $m-medium;
-    }
-    
-    select:focus, select:after, select:hover {
-        
-        margin-top:1vw;
-        margin-bottom:1vw;
-        height: 7vw;
-        width:100%;
-        border: 2px solid $textcolor1;
-        border-radius: 4px;
-        color: $textcolor1;
-        background-color: $bgcolor;
-        padding-left:1vw;
-        padding-right:1vw;
-        box-shadow: none;
     }
     
     input[type=text], input[type=date], input[type=month],  input[type=password], textarea {
@@ -201,7 +202,10 @@
     }
     
     #member1Del:disabled,#gbm1Del:disabled,#bod1Del:disabled,#futureEvent1Del:disabled,#event1Del:disabled {
-        display: none;
+        // display: none;
+        background-color: #555;
+        border: 2px solid #555;
+
     }
     
     .m-memberMatrix {
@@ -256,14 +260,14 @@
         outline: none;
     }
 
-    input.empty {
+    input.empty{
         outline : none;
         box-shadow: none;
         border: 1px solid red;
         color : red;    
     }
 
-    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=month].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus,  input[type=month].empty:focus {
+    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=month].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus,  input[type=month].empty:focus{
         outline : none;
         box-shadow: none;
         border: 2px solid red;
@@ -271,7 +275,10 @@
         font-weight: bold;
     }
 
-
+    
+    input[type=text]:read-only {
+        background-color: #f1f1f1f1;
+    }
     
 }
 

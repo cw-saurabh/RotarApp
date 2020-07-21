@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_sass'
+    'django_sass',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,5 @@ LOGIN_URL = '/login'
 # Rotary Id: 214399
 # Email address: rotaractclubpanvelcentral@gmail.com
 # Password: babubhaiya
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

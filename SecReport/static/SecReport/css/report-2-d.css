@@ -164,6 +164,20 @@
     padding-right: 1vw;
     box-shadow: none;
   }
+  #reportForm .col-lg-3 select.empty, #reportForm .col-lg-6 select.empty, #reportForm .col-lg-2 select.empty, #reportForm .col-lg-8 select.empty, #reportForm .col-lg-4 select.empty, #reportForm .col-lg-5 select.empty {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+  }
+  #reportForm .col-lg-3 select.empty:hover, #reportForm .col-lg-3 select.empty:focus, #reportForm .col-lg-3 select.empty:after, #reportForm .col-lg-6 select.empty:hover, #reportForm .col-lg-6 select.empty:focus, #reportForm .col-lg-6 select.empty:after, #reportForm .col-lg-2 select.empty:hover, #reportForm .col-lg-2 select.empty:focus, #reportForm .col-lg-2 select.empty:after, #reportForm .col-lg-8 select.empty:hover, #reportForm .col-lg-8 select.empty:focus, #reportForm .col-lg-8 select.empty:after, #reportForm .col-lg-4 select.empty:hover, #reportForm .col-lg-4 select.empty:focus, #reportForm .col-lg-4 select.empty:after, #reportForm .col-lg-5 select.empty:hover, #reportForm .col-lg-5 select.empty:focus, #reportForm .col-lg-5 select.empty:after {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+  }
   #reportForm .label {
     color: #337ab7;
     font-size: 1vw;
@@ -236,9 +250,12 @@
   #reportForm button:focus, #reportForm #reportButton00:focus, #reportForm #reportButton01:focus, #reportForm #reportButton02:focus, #reportForm #reportButton10:focus, #reportForm #reportButton11:focus, #reportForm #reportButton12#reportButton20:focus:focus, #reportForm #reportButton21:focus, #reportForm #reportButton22:focus {
     outline: none;
   }
-  #member1Del:disabled, #gbm1Del:disabled, #bod1Del:disabled, #futureEvent1Del:disabled, #event1Del:disabled {
+  #reportForm #member1Del:disabled, #reportForm #gbm1Del:disabled, #reportForm #bod1Del:disabled, #reportForm #futureEvent1Del:disabled, #reportForm #event1Del:disabled {
     background-color: #555;
     border: solid #555;
+  }
+  #reportForm input[type=text]:read-only {
+    background-color: #f1f1f1f1;
   }
   #reportButton00, #reportButton01, #reportButton02, #reportButton10, #reportButton11, #reportButton12, #reportButton20, #reportButton21, #reportButton22 {
     background-color: #337ab7;

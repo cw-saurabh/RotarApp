@@ -7,11 +7,29 @@
 <script>
     
 function jaadu() {
-    $("input[type=text]").val("NA"); 
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today1 = now.getFullYear()+"-"+(month)+"-"+(day) ;   
+    var today2 = now.getFullYear()+"-"+(month) ;   
+    $("input[type=date]").val(today1); 
+    $("input[type=month]").val(today2); 
+    $("input[type=text]").val("0"); 
+    $("select").prop('selectedIndex', 0);
     $("#bar").css('width','100%'); 
     $("#reportButton21").attr('disabled', false);  
-    alert("{{ profile.logo.url }}");
 }
+
+$(document).ready(function(){
+    {% for key, value in contextDict.items %}
+        console.log("{{key}}");
+        $('#{{key}}').val("{{value}}");
+    {% endfor %}
+    {% if error %}
+        alert("error");
+        $('#errorMessages').html("<p>{{error}}</p>");
+    {% endif %}
+});
 
 </script>
 
@@ -20,8 +38,11 @@ function jaadu() {
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
     <img id="reportImage1" src="{{STATIC_URL}}{{ profile.logo.url }}" alt="Rotaract">
+    {% if profile.zone %}
     <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>Zone {{ profile.zone }} - {{ user.rotaryId }}</h5></b></h4>
-    
+    {% else %}    
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+    {% endif %}     
 </div>
 
 <div class="container" id="tabs">
@@ -30,14 +51,6 @@ function jaadu() {
         <div class="progress-bar" id="bar"></div>
         <div id="bubble"></div>
     </div>
-    <!-- <div class="row">
-        <div class="col-3 segment"></div>
-        <div class="col-1 nodes"></div>
-        <div class="col-2 segment"></div>
-        <div class="col-1 nodes"></div>
-        <div class="col-2 segment"></div>
-        <div class="col-1 nodes"></div>
-    </div>     -->
     <div class="row" style="margin:0">
         <div class="col-lg-4 col-xs-4 text-center">
             <p class="tablinks active" id="AdminLink" onclick="openSection('Admin')">Admin</p>
@@ -59,18 +72,29 @@ function jaadu() {
 <form action="" method="POST">
 {% csrf_token %}
 
+<div id="Admin" class="tabcontent active">
+    
 <div class="row" style="margin:0">
     <div class="col-lg-3">
         <p class="label">Reporting for the month of :</p>
     </div>
+    <div style="display: none;">
+        <input type="text" id="gbmlist" name="gbmlist">
+    </div>
+    <div style="display: none;">
+        <input type="text" id="bodlist" name="bodlist">
+    </div>
+    <div style="display: none;">
+        <input type="text" id="eventlist" name="eventlist">
+    </div>
+    <div style="display: none;">
+        <input type="text" id="futureEventlist" name="futureEventlist">
+    </div>
     <br class="mobile"><br class="mobile">
     <div class="col-lg-3" >
-        <input type="month" style="margin:0" id="month" name="month">
+        <input onchange="updateMonth()" type="month" style="margin:0" id="month" name="month">
     </div>
 </div>
-
-
-<div id="Admin" class="tabcontent active">
     <br><br>
     {% include "SecReport/admin.html" %}
     <br><br>
