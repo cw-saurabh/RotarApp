@@ -29,7 +29,7 @@ class Report(models.Model):
     dues04          = models.CharField(max_length=6,verbose_name = "District Dues paid in this month")
     bulletin00      = models.CharField(max_length=15,verbose_name = "Name of Bulletin")
     bulletin01      = models.CharField(max_length=10,verbose_name = "Type of Bulletin")
-    bulletin02      = models.CharField(max_length=50,verbose_name = "Link")
+    bulletin02      = models.CharField(max_length=100,verbose_name = "Link")
     bulletin03      = models.DateTimeField(verbose_name = "Issued on")
     bulletin04      = models.DateTimeField(verbose_name = "Last Issued on")
     bulletin05      = models.CharField(max_length=15,verbose_name = "Frequency")
@@ -90,7 +90,7 @@ class Event(models.Model):
     event4      = models.CharField(max_length=5,verbose_name = "Volunteer Hours")
     event5      = models.CharField(max_length=7,verbose_name = "Funds Raised")
     event6      = models.CharField(max_length=100,verbose_name = "Description")
-    event7      = models.CharField(max_length=50,verbose_name = "Instagram Link")
+    event7      = models.CharField(max_length=100,verbose_name = "Instagram Link")
     
     class Meta:
         verbose_name = 'Event'

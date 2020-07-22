@@ -165,7 +165,7 @@
         font-size: $m-medium;
     }
     
-    input[type=text], input[type=date], input[type=month],  input[type=password], textarea {
+    input[type=text], input[type=date], input[type=month],  input[type=password], input[type=number], input[type=url], textarea {
         height : 7vw;
         width:100%;
         border: 1px solid lightgrey;
@@ -178,7 +178,7 @@
         
     }
     
-    input[type=text]:hover, textarea:hover, input[type=text]:hover, input[type=date]:hover,  input[type=month]:hover, input[type=text]:focus, textarea:focus, input[type=password]:focus, input[type=date]:focus,  input[type=month]:focus {
+    input[type=text]:hover, input[type=date]:hover, input[type=month]:hover,  input[type=password]:hover, input[type=number]:hover, input[type=url]:hover, textarea:hover, input[type=text]:focus, input[type=date]:focus, input[type=month]:focus,  input[type=password]:focus, input[type=number]:focus, input[type=url]:focus, textarea:focus {
         border: 2px solid $textcolor1;
         border-radius: 4px;
         outline: none;
@@ -213,7 +213,7 @@
         line-height:7vw;
         margin-top:3vw;
         
-        input[type=text]:focus, input[type=text]:hover, input[type=text], input {
+        input[type=number]:focus, input[type=number]:hover, input[type=number], input {
             font-size: $m-small;
             padding-left:2vw;
             font-weight: bold;
@@ -267,7 +267,7 @@
         color : red;    
     }
 
-    input[type=text].empty:hover, textarea.empty:hover, input[type=date].empty:hover, input[type=month].empty:hover, input[type=text].empty:focus, textarea.empty:focus, input[type=password].empty:focus, input[type=date].empty:focus,  input[type=month].empty:focus{
+    input[type=text].empty:hover, input[type=date].empty:hover, input[type=month].empty:hover,  input[type=password].empty:hover, input[type=number].empty:hover, input[type=url].empty:hover, textarea.empty:hover, input[type=text].empty:focus, input[type=date].empty:focus, input[type=month].empty:focus,  input[type=password].empty:focus, input[type=number].empty:focus, input[type=url].empty:focus, textarea.empty:focus {
         outline : none;
         box-shadow: none;
         border: 2px solid red;
@@ -275,8 +275,7 @@
         font-weight: bold;
     }
 
-    
-    input[type=text]:read-only {
+    input[type=text]:read-only, input[type=month]:read-only,input[type=number]:read-only {
         background-color: #f1f1f1f1;
     }
     

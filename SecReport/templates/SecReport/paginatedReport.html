@@ -13,8 +13,9 @@ function jaadu() {
     var today1 = now.getFullYear()+"-"+(month)+"-"+(day) ;   
     var today2 = now.getFullYear()+"-"+(month) ;   
     $("input[type=date]").val(today1); 
-    $("input[type=month]").val(today2); 
     $("input[type=text]").val("0"); 
+    $("input[type=number]").val(0); 
+    $("input[type=url]").val('-'); 
     $("select").prop('selectedIndex', 0);
     $("#bar").css('width','100%'); 
     $("#reportButton21").attr('disabled', false);  
@@ -39,9 +40,9 @@ $(document).ready(function(){
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
     <img id="reportImage1" src="{{STATIC_URL}}{{ profile.logo.url }}" alt="Rotaract">
     {% if profile.zone %}
-    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>Zone {{ profile.zone }} - {{ user.rotaryId }}</h5></b></h4>
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h4>Zone {{ profile.zone }} - {{ user.rotaryId }}</h4></b></h4>
     {% else %}    
-    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h4>{{ user.rotaryId }}</h4></b></h4>
     {% endif %}     
 </div>
 
@@ -79,20 +80,20 @@ $(document).ready(function(){
         <p class="label">Reporting for the month of :</p>
     </div>
     <div style="display: none;">
-        <input type="text" id="gbmlist" name="gbmlist">
+        <input autocomplete="off" type="text" id="gbmlist" name="gbmlist">
     </div>
     <div style="display: none;">
-        <input type="text" id="bodlist" name="bodlist">
+        <input autocomplete="off" type="text" id="bodlist" name="bodlist">
     </div>
     <div style="display: none;">
-        <input type="text" id="eventlist" name="eventlist">
+        <input autocomplete="off" type="text" id="eventlist" name="eventlist">
     </div>
     <div style="display: none;">
-        <input type="text" id="futureEventlist" name="futureEventlist">
+        <input autocomplete="off" type="text" id="futureEventlist" name="futureEventlist">
     </div>
     <br class="mobile"><br class="mobile">
     <div class="col-lg-3" >
-        <input onchange="updateMonth()" type="month" style="margin:0" id="month" name="month">
+        <input autocomplete="off" onchange="updateMonth()" type="month" style="margin:0" id="month" name="month" readonly>
     </div>
 </div>
     <br><br>

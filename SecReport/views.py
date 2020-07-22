@@ -143,7 +143,7 @@ def report(request):
                     futureEvent0 = request.POST[x+"-0"],
                     futureEvent1 = request.POST[x+"-1"],
                     futureEvent2 = request.POST[x+"-2"],
-                    futureEvent3 = request.POST[x+"-2"],
+                    futureEvent3 = request.POST[x+"-3"],
                 )
             
             

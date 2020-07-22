@@ -7,8 +7,12 @@
 
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
-    <!-- <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract"> -->
-    <h4 id="reportHeading2"><b>{{ user.name }}<br><h5>{{ user.rotaryId }}</h5></b></h4>
+    <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract">
+    {% if profile.zone %}
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h4>Zone {{ profile.zone }} - {{ user.rotaryId }}</h4></b></h4>
+    {% else %}    
+    <h4 id="reportHeading2"><b>{{ user.name }}<br><h4>{{ user.rotaryId }}</h4></b></h4>
+    {% endif %}     
 </div>
 
 <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">

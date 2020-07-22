@@ -6,27 +6,27 @@
     <div class="row">
         <div class="col-lg-4">
             <p class="label">Name of Bulletin<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="text" name="bulletin00"  id="bulletin00">
+            <input autocomplete="off" onchange="updateProgress()"  type="text" maxlength="15" name="bulletin00"  id="bulletin00">
         </div>
         <div class="col-lg-4">
             <p class="label">Type of Bulletin<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="text" name="bulletin01"  id="bulletin01">
+            <input autocomplete="off" onchange="updateProgress()"  type="text" maxlength="10" name="bulletin01"  id="bulletin01">
         </div>
         <div class="col-lg-4">
-            <p class="label">Link<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="text" name="bulletin02"  id="bulletin02">
+            <p class="label">Drive Link<b style="color:red"> *</b></p><br>
+            <input autocomplete="off" onchange="updateProgress()"  type="url" maxlength="100" oninput="validateUrl(this.id)||(value='');" name="bulletin02"  id="bulletin02">
         </div>
         <div class="col-lg-4">
             <p class="label">Issued on<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="date" name="bulletin03"  id="bulletin03">
+            <input autocomplete="off" onchange="updateProgress()"  type="date" name="bulletin03"  id="bulletin03">
         </div>
         <div class="col-lg-4">
             <p class="label">Last Issued on<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="date" name="bulletin04"  id="bulletin04">
+            <input autocomplete="off" onchange="updateProgress()"  type="date" name="bulletin04"  id="bulletin04">
         </div>
         <div class="col-lg-4">
             <p class="label">Frequency<b style="color:red"> *</b></p><br>
-            <input onchange="updateProgress()"  type="text" name="bulletin05"  id="bulletin05">
+            <input autocomplete="off" onchange="updateProgress()"  type="text" maxlength="15" name="bulletin05"  id="bulletin05">
         </div>
         
     </div>
@@ -99,7 +99,7 @@
 <br>
 <div class="container-fluid table-responsive">
     <div class="row">
-        <textarea rows="5" name="suggestion00"  id="suggestion00"></textarea>
+        <textarea maxlength="100" rows="5" name="suggestion00"  id="suggestion00"></textarea>
     </div>
     <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
 </div> 
@@ -110,10 +110,10 @@
             <button id="reportButton20" type="button"  onclick="openSection('Avenue')">Previous</button>
         </div>
         <div class="col-4">
-            <button id="reportButton21" type="button" onclick="customsubmit()">SubmitFake</button>
+            <button id="reportButton21" type="button" onclick="customsubmit()">Submit</button>
         </div>
         <div class="col-4">
-            <button id="reportButton22" type="button"  onclick="openSection('Admin')" disabled>Next</button>
+            <!-- <button id="reportButton22" type="button"  onclick="openSection('Admin')" disabled>Next</button> -->
         </div>
     </div>
 </div>

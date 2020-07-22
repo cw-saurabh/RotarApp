@@ -114,6 +114,10 @@
         margin-right:2vw;
         color:$textcolor1;
     }
+    
+    input[type=submit] {
+        color:white;
+    }
 
 }
 
@@ -137,5 +141,6 @@
     width:80%;
     box-shadow: 3px 3px 2px #555;
 }
+
 
 }

@@ -97,6 +97,9 @@
     margin-right: 2vw;
     color: #337ab7;
   }
+  #authSection input[type=submit] {
+    color: white;
+  }
   #loginImage1 {
     float: none;
     display: block;
