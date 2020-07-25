@@ -14,7 +14,7 @@ class AccountAdmin(UserAdmin):
     list_display = ['username','name','rotaryId']
     exclude = ('first_name','last_name')
     fieldsets = (
-        ('Personal info', {'fields': ('username','name', 'email', 'password','rotaryId')}),
+        ('Personal info', {'fields': ('username','name', 'email', 'password','rotaryId','is_club','is_rotaractor')}),
         # ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
     )

@@ -7,7 +7,7 @@
 
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1" onclick="jaadu()"><b>Secretarial Reporting</b></h4>
-    <img id="reportImage1" src="{% static 'Main/images/RACPC- LogoTransparent.png' %}" alt="Rotaract">
+    <img id="reportImage1" src="{{STATIC_URL}}{{ profile.logo.url }}" alt="Rotaract">
     {% if profile.zone %}
     <h4 id="reportHeading2"><b>{{ user.name }}<br><h4>Zone {{ profile.zone }} - {{ user.rotaryId }}</h4></b></h4>
     {% else %}    
@@ -21,7 +21,7 @@
     {% if success %}
         <div class="alert alert-success">
             <strong>Success!</strong> {{ success }}
-            <br>Your Report Id = {{ reportId }}
+            <br>Your Report Id = <a href="{% url 'viewreports' reportid=reportId %}" >{{ reportId }}</a>
         </div>
     {% elif error %}
         <div class="alert alert-danger">

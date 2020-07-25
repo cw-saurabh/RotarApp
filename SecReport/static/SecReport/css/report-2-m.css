@@ -230,4 +230,113 @@
     outline: none;
     color: #337ab7;
   }
+  #reportFormView .heading {
+    width: 100%;
+    background-color: #337ab7;
+    border-radius: 4px;
+    height: 9vw;
+    line-height: 9vw;
+    border: solid black;
+    border: 2px solid #337ab7;
+    box-shadow: 3px 3px 2px #555;
+    padding-left: 1vw;
+    font-size: 3vw;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+  #reportFormView .container-fluid {
+    padding: 8vw;
+  }
+  #reportFormView .col-lg-2 input, #reportFormView .col-lg-2 button, #reportFormView .col-lg-3 input, #reportFormView .col-lg-3 button, #reportFormView .col-lg-4 input, #reportFormView .col-lg-4 button, #reportFormView .col-lg-5 input, #reportFormView .col-lg-5 button, #reportFormView .col-lg-6 input, #reportFormView .col-lg-6 button, #reportFormView .col-lg-8 input, #reportFormView .col-lg-8 button {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    width: 100%;
+    height: 7vw;
+  }
+  #reportFormView .label {
+    color: #337ab7;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    padding: 0;
+  }
+  #reportFormView hr {
+    width: 90%;
+    margin: 10vw auto 10vw auto;
+  }
+  #reportFormView .m-subHeading {
+    color: #D41367;
+    font-weight: bold;
+    font-size: 4vw;
+  }
+  #reportFormView input[type=text], #reportFormView input[type=date], #reportFormView input[type=month], #reportFormView input[type=password], #reportFormView input[type=number], #reportFormView input[type=url], #reportFormView textarea {
+    height: 7vw;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    color: #337ab7;
+    background-color: #FFFFFF;
+    padding-left: 3vw;
+    padding-right: 1vw;
+    box-shadow: 2px 2px 2px #555;
+  }
+  #reportFormView input[type=text]:hover, #reportFormView input[type=date]:hover, #reportFormView input[type=month]:hover, #reportFormView input[type=password]:hover, #reportFormView input[type=number]:hover, #reportFormView input[type=url]:hover, #reportFormView textarea:hover, #reportFormView input[type=text]:focus, #reportFormView input[type=date]:focus, #reportFormView input[type=month]:focus, #reportFormView input[type=password]:focus, #reportFormView input[type=number]:focus, #reportFormView input[type=url]:focus, #reportFormView textarea:focus {
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+    outline: none;
+    color: #337ab7;
+    background-color: #FFFFFF;
+    padding-left: 3vw;
+    padding-right: 1vw;
+    box-shadow: none;
+  }
+  #reportFormView .m-memberMatrix {
+    line-height: 7vw;
+    margin-top: 3vw;
+  }
+  #reportFormView .m-memberMatrix input[type=number]:focus, #reportFormView .m-memberMatrix input[type=number]:hover, #reportFormView .m-memberMatrix input[type=number], #reportFormView .m-memberMatrix input {
+    font-size: 3vw;
+    padding-left: 2vw;
+    font-weight: bold;
+    width: 7vw;
+  }
+  #reportFormView textarea {
+    width: 100%;
+    height: 20vw;
+  }
+  #listSection #reportHeading1 {
+    color: #D41367;
+    font-size: 5vw;
+  }
+  #listSection #reportImage1 {
+    height: auto;
+    width: 30vw;
+  }
+  #listSection #reportHeading2 {
+    color: #337ab7;
+    font-size: 4vw;
+  }
+  #listSection #clublogo {
+    display: none;
+  }
+  #listSection .row {
+    text-align: center;
+    margin-top: 10vw;
+  }
+  #listSection #member, #listSection #member1 {
+    height: 7vw;
+    width: 90%;
+    margin: 3vw 0 3vw 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    border: solid #D41367;
+    background-color: #D41367;
+    box-shadow: 2px 2px 2px #555;
+  }
+  #listSection #member1 {
+    margin: 0 0 2vw 0;
+  }
 }

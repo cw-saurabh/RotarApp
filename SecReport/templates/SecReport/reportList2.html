@@ -1,0 +1,37 @@
+{% extends "Main/base.html" %}
+    
+{% load static %}
+
+{% block content %}
+
+<div class="listrow" id="listSection">
+    <div class="container-fluid">
+        <br>
+        <h4 id="reportHeading1" class="text-center"><b>{{Club.name}}</b></h4>
+        <h4 id="reportHeading2" class="text-center"><b>Monthly Secretarial Reports</b></h4>
+        <br>
+        <hr class="mb-4 mt-8" style="margin:auto;border-width: medium;border-color: #D41367;width:95%">
+        {% for Report in Reports %}
+
+        <div class="row">
+            <div class="col-lg-3">
+                <b style="color:#337ab7">Month :&nbsp;&nbsp;&nbsp;&nbsp;</b>{{ Report.month }}
+            </div>
+            <div class="col-lg-5">
+                <b style="color:#337ab7">Date :&nbsp;&nbsp;&nbsp;&nbsp;</b>{{ Report.date.date }}
+            </div>
+            <div class="col-lg-2">
+                <a type="button" id="member" style="text-decoration:none" href="{% url 'viewreports' reportid=Report.reportId %}" class="text-center" >View</a>
+            </div>
+            <div class="col-lg-2">
+                <a type="button" id="member1" style="text-decoration:none" href="#" class="text-center" >Export</a>
+            </div>
+        </div>
+    
+        {% endfor %}
+    <br><br><br>
+    </div>
+</div>
+
+{% endblock content%}
+

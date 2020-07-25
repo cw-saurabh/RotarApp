@@ -19,7 +19,7 @@
     <a href="{% url 'main-home' %}" id="desktop-home">Home</a>
     {% if user.is_authenticated %}
     <a href="{% url 'report' %}" id="desktop-report">Reporting</a>
-    <a href="{% url 'passwordChange' %}" id="desktop-profile">Profile</a>
+    <a href="{% url 'profile2' %}" id="desktop-profile">Profile</a>
     <a href="{% url 'logout' %}" id="desktop-logout">Logout</a>
     {% else %}
     <a href="{% url 'login' %}" id="desktop-login">Login</a>
@@ -33,7 +33,7 @@
       <a href="{% url 'main-home' %}" id="mobile-home">Home</a>
       {% if user.is_authenticated %}
       <a href="{% url 'report' %}" id="mobile-report">Reporting</a>
-      <a href="{% url 'passwordChange' %}" id="mobile-profile">Profile</a>
+      <a href="{% url 'profile2' %}" id="mobile-profile">Profile</a>
       <a href="{% url 'logout' %}" id="mobile-logout">Logout</a>
       {% else %}
       <a href="{% url 'login' %}" id="mobile-login">Login</a>

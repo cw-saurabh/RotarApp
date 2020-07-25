@@ -10,9 +10,9 @@ class Account(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = None
     last_name = None
-    name = models.CharField(max_length=30,verbose_name = "Name", default="",blank=True)
-    is_rotaractor = models.BooleanField('student status', default=False)
-    is_club = models.BooleanField('teacher status', default=False)
+    name = models.CharField(max_length=50,verbose_name = "Name", default="",blank=True)
+    is_rotaractor = models.BooleanField('Rotaractor', default=False)
+    is_club = models.BooleanField('Club status', default=False)
     rotaryId = rotaryId = models.IntegerField(verbose_name = "Rotary Id",null=True,blank=True)
 
     REQUIRED_FIELDS = ['rotaryId','email']
@@ -30,7 +30,8 @@ class Club(models.Model):
     zone = models.IntegerField(verbose_name = "Zone")
     clubCode = models.IntegerField(verbose_name = "Club Code", blank=True, null=True)
     logo = models.ImageField(verbose_name="Logo", upload_to="logos", default="logos/district_logo.png")
-    
+    date  = models.DateTimeField(verbose_name = "Charter Date", null=True, blank=True, default=None)
+    meetingPlace = models.CharField(max_length=100,verbose_name = "Meeting Place", null=True, blank=True, default=None)
     
     def __str__(self):
         return f'{self.account.name}'

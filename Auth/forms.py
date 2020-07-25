@@ -43,6 +43,16 @@ class PasswordChange(PasswordChangeForm):
 
 
 class ProfileUpdateForm(forms.ModelForm) :
+    
+    logo = forms.ImageField(required=False, widget=forms.FileInput())
+    zone = forms.CharField(required=False, widget=forms.TextInput())
+
     class Meta :
         model = Club
-        fields = ['zone','logo']       
+        fields = ['zone','logo','date','meetingPlace']       
+
+class EmailUpdateForm(forms.ModelForm) :
+        
+    class Meta :
+        model = Account
+        fields = ['email']       

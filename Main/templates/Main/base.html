@@ -17,6 +17,7 @@
 
     <!-- External javascript file, that does everything needed for this webApp -->
     <script src="{% static 'Main/javascript/everything.js' %}"></script>
+    <script src="{% static 'Main/javascript/viewReport.js' %}"></script>
 
     <!-- External css files -->
     <link rel="stylesheet" href="{% static 'Main/css/main-d1.css' %}">
@@ -44,7 +45,6 @@
     {% include "Main/navbar.html" %}
     
     <div class="container" id="mainWrapperContainer">
-      <br>
       {% block content %}{% endblock %}
     </div>  
 

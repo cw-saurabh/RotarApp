@@ -5,23 +5,42 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="" id="authSection">
+<div class="" id="listSection">
   
-<div class="heading ">
-    <b>Update Profile</b>
-    <hr class="desktop" style="margin:0;border-width: medium;border-color: #D41367;width:85%;margin-top:1vw;float:left">
-    <br class="desktop"><br class="desktop">
+<div class="heading text-center">
+  <h4 id="reportHeading1" onclick="jaadu()"><b>{{ user.name }}</b></h4>
+  <img id="reportImage1" src="{{STATIC_URL}}{{ profile.logo.url }}" alt="Rotaract">
+  {% if profile.zone %}
+  <h4 id="reportHeading2"><b><h4>Zone {{ profile.zone }} - {{ user.rotaryId }}</h4></b></h4>
+  {% else %}    
+  <h4 id="reportHeading2"><b><h4>{{ user.rotaryId }}</h4></b></h4>
+  {% endif %}     
+    <hr class="desktop" style="margin:0;border-width: medium;border-color: #D41367;width:100%;margin-top:1vw;">
+    <br>
     <hr class="mobile" style="margin:0;border-width: medium;border-color: #D41367;width:100%;margin-top:1vw">
+    <br>
 </div>
 
 
-<form method="post" action="{% url 'profile2' %}">
+<form method="post" action="{% url 'profile2' %}" enctype="multipart/form-data">
     {% csrf_token %}
+    {{ eform|crispy }}
+    {{ pform|crispy }}
+    <div class="row">
+      <div class="col-lg-6">
+        <input  type="submit" id="member" style="width:100%" value="Update"></input>    
+      </div>
+      <div class="col-lg-6">
+        <a class="text-center"type="button" href="{% url 'passwordChange' %}" id="member" style="width:100%">Change Password</a>
+      </div>
+    </div>
+  
     
-    {{ form|crispy }}
-    <input autocomplete="off" type="submit" id="loginButton1" value="Update"></input>
     
+
+
   </form>
+
 </div>
   
 {% endblock content%}

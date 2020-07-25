@@ -419,6 +419,7 @@ function openSection(sectionName) {
     }
 }
 
+
 function openNav() {
     let x = document.getElementById("mynavigation");
     if (x.className === "navigation sticky") 

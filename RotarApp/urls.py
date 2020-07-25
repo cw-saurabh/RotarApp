@@ -7,10 +7,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Main.urls')),
-    path('report/', include('SecReport.urls')),
+    path('', include('SecReport.urls')),
     path('', include('Auth.urls')),
-    # path('login/',auth_views.LoginView.as_view(template_name='Main/login.html'), name='login'),
-    # path('logout/',auth_views.LogoutView.as_view(template_name='Main/logout.html'), name='logout')
 ]
 
 if settings.DEBUG :

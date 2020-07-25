@@ -42,6 +42,7 @@ class Report(models.Model):
     class Meta:
         verbose_name = 'Report'
         verbose_name_plural = 'Reports'
+        get_latest_by = 'date'
     
     def __str__(self):
         return f'{self.club.name}-{self.month}'

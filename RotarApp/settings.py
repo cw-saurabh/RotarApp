@@ -149,3 +149,4 @@ LOGIN_URL = '/login'
 # Password: babubhaiya
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
