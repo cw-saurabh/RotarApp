@@ -6,6 +6,8 @@ import secrets
 from datetime import datetime
 from django.db import transaction
 from django.http import HttpResponseForbidden
+import xlwt
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -35,7 +37,6 @@ def month(string) :
         month="November"
     elif(monthNo == "12") :
         month="December"
-    print(month+string[2,4])
     return month+string[2,4]
 
 @login_required
@@ -60,7 +61,6 @@ def report(request):
                     contextList.append(x)
         
                 # Actual loading
-                print(request.POST['bulletin03'])
                 with transaction.atomic():
 
                     report = Report(club = request.user,
@@ -86,8 +86,8 @@ def report(request):
                                 bulletin00      = request.POST['bulletin00'],
                                 bulletin01      = request.POST['bulletin01'],
                                 bulletin02      = request.POST['bulletin02'],
-                                bulletin03      = request.POST['bulletin03'],
-                                bulletin04      = request.POST['bulletin04'],
+                                bulletin03      = request.POST['bulletin03'] if request.POST['bulletin03'] else None,
+                                bulletin04      = request.POST['bulletin04'] if request.POST['bulletin04'] else None,
                                 bulletin05      = request.POST['bulletin05'],
                                 feedback00      = request.POST['feedback00'],
                                 feedback01      = request.POST['feedback01'],
@@ -148,9 +148,6 @@ def report(request):
                         futureEvent2 = request.POST[x+"-2"],
                         futureEvent3 = request.POST[x+"-3"],
                     )
-                
-                
-                print('Success')   
         
                 return render(request, 'SecReport/paginatedReportResponse.html',{'title':'Reporting','tab':'report','success':'The report has been saved successfully','reportId':report.reportId,'profile':profile})        
         
@@ -158,14 +155,13 @@ def report(request):
                 print(e)
                 return render(request, 'SecReport/paginatedReport.html',{'contextDict':context,'title':'Reporting','tab':'report','profile':profile, 'error':e})        
         else :
-            print('Fresh')
             return render(request, 'SecReport/paginatedReport.html',{'title':'Reporting','tab':'report','profile':profile})
     elif request.user == Account.objects.filter(username='admin').first() :
         Clubs = Account.objects.filter(is_club = True).all()
         Reports = Report.objects.all()
         return render(request, 'SecReport/reportList.html',{'title':'Reporting','tab':'report','Clubs':Clubs,'Reports':Reports})
 
-def listreports(request,username):
+def listReports(request,username):
     user = Account.objects.filter(username=username).first()
     Reports = Report.objects.filter(club=user).all()
     if request.user == user or request.user == Account.objects.filter(username='admin').first():
@@ -173,7 +169,7 @@ def listreports(request,username):
     else :
         return HttpResponseForbidden()
 
-def viewreports(request,reportid):
+def viewReports(request,reportid):
     Report1 = Report.objects.filter(reportId=reportid).first()
     GBMs = GBM.objects.filter(reportId=reportid).all()
     BODs = BOD.objects.filter(reportId=reportid).all()
@@ -185,3 +181,94 @@ def viewreports(request,reportid):
         return render(request, 'SecReport/reportRendered.html',{'title':'Reporting','tab':'report','Report':Report1, 'Club':user, 'Profile':profile, 'GBMs':GBMs, 'BODs':BODs, 'Events':Events, 'FutureEvents':FutureEvents })
     else :
         return HttpResponseForbidden()
+
+def exportReport(request,reportid):
+    response = HttpResponse(content_type='application/ms-excel')
+    Report1 = Report.objects.filter(reportId=reportid).all().first()
+    Club = Report1.club.username
+    Month = Report1.month
+    response['Content-Disposition'] = 'attachment; filename="'+str(Club)+"-"+str(Month)+'.xls"'
+    wb = xlwt.Workbook(encoding='utf-8')
+    colwidth = int(13*260)
+
+    #Reports
+    ws = wb.add_sheet('Reports')
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    font_style.alignment.wrap = 1
+    columns = ['Month','Date','M - at the beginning','F - at the beginning','O - at the beginning','M - Inducted','F - Inducted','O - Inducted','M - left','F - left','O - left','M - Prospective','F - Prospective','O - Prospective', 'M - Guests', 'F - Guests', 'O - Guests','Dues paid upto the last month','Dues paid in this month','Bulletin Name','Bulletin Type','Bulletin Link','Bulletin Issued on','Bulletin last issued on','Bulletin Frequency','Feedback Q1','Feedback Q2','Feedback Q3','Feedback Q4','Suggestions']
+    for i in range(len(columns)):
+        ws.col(i).width = colwidth
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    font_style = xlwt.XFStyle()
+    font_style.alignment.wrap = 1
+    rows = Report.objects.filter(reportId=reportid).all().values_list('month','date','memberMatrix00','memberMatrix01','memberMatrix02','memberMatrix10','memberMatrix11','memberMatrix12','memberMatrix20','memberMatrix21','memberMatrix22','memberMatrix30','memberMatrix31','memberMatrix32','memberMatrix40','memberMatrix41','memberMatrix42','dues00','dues04','bulletin00','bulletin01','bulletin02','bulletin03','bulletin04','bulletin05','feedback00','feedback01','feedback02','feedback03','suggestion00')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, str(row[col_num]), font_style)
+
+    #GBM
+    ws = wb.add_sheet('GBM')
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    columns = ['Meeting No.','Date','Agenda','Bylaws passed?','Budget passed?','Attendance']
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    font_style = xlwt.XFStyle()
+    rows = GBM.objects.filter(reportId=reportid).all().values_list('gbm0','gbm1','gbm2','gbm3','gbm4','gbm5')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, str(row[col_num]), font_style)
+
+    #BOD
+    ws = wb.add_sheet('BOD')
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    columns = ['Meeting No.','Date','Agenda','Bylaws passed?','Budget passed?','Attendance']
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    font_style = xlwt.XFStyle()
+    rows = BOD.objects.filter(reportId=reportid).all().values_list('bod0','bod1','bod2','bod3','bod4','bod5')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, str(row[col_num]), font_style)
+    
+    #Event
+    ws = wb.add_sheet('Event')
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    columns = ['Date','Name','Avenue','Attendance','Hours','Funds raised','Description','Instagram Link']
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    font_style = xlwt.XFStyle()
+    rows = Event.objects.filter(reportId=reportid).all().values_list('event0','event1','event2','event3','event4','event5','event6','event7')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, str(row[col_num]), font_style)
+
+    # FutureEvent    
+    ws = wb.add_sheet('FutureEvent')
+    row_num = 0
+    font_style = xlwt.XFStyle()
+    font_style.font.bold = True
+    columns = ['Date','Name','Description','Avenue']
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], font_style)
+    font_style = xlwt.XFStyle()
+    rows = FutureEvent.objects.filter(reportId=reportid).all().values_list('futureEvent0','futureEvent1','futureEvent2','futureEvent3')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, str(row[col_num]), font_style)
+
+    wb.save(response)
+    return response

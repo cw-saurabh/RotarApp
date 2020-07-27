@@ -2,11 +2,9 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileUpdateForm, EmailUpdateForm
 from .models import Club
+from django.shortcuts import redirect
 
 # Create your views here.
-def login(request):
-    return render(request, 'Auth/login.html',{'tab':'login'})
-
 @login_required
 def profile(request):
     if request.method == 'POST' :
@@ -18,6 +16,7 @@ def profile(request):
             e_form.save()
         if p_form.is_valid():
             p_form.save()
+        return redirect('profile')
     else :
         p_form = ProfileUpdateForm(instance= Club.objects.filter(account=request.user).first())
         e_form = EmailUpdateForm(instance=request.user)

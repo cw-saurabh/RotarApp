@@ -17,10 +17,10 @@ value23 = {{Report.memberMatrix20}} + {{Report.memberMatrix21}} + {{Report.membe
 value33 = {{Report.memberMatrix30}} + {{Report.memberMatrix31}} + {{Report.memberMatrix32}};
 value43 = {{Report.memberMatrix40}} + {{Report.memberMatrix41}} + {{Report.memberMatrix42}};
 
-value50 = {{Report.memberMatrix00}} + {{Report.memberMatrix10}} + {{Report.memberMatrix20}} + {{Report.memberMatrix30}} + {{Report.memberMatrix40}} ;
-value51 = {{Report.memberMatrix01}} + {{Report.memberMatrix11}} + {{Report.memberMatrix21}} + {{Report.memberMatrix31}} + {{Report.memberMatrix41}} ;
-value52 = {{Report.memberMatrix02}} + {{Report.memberMatrix12}} + {{Report.memberMatrix22}} + {{Report.memberMatrix32}} + {{Report.memberMatrix42}} ;
-value53 = value03 + value13 + value23 + value33 + value43;
+value50 = {{Report.memberMatrix00}} + {{Report.memberMatrix10}} - {{Report.memberMatrix20}};
+value51 = {{Report.memberMatrix01}} + {{Report.memberMatrix11}} - {{Report.memberMatrix21}};
+value52 = {{Report.memberMatrix02}} + {{Report.memberMatrix12}} - {{Report.memberMatrix22}};
+value53 = value03 + value13 - value23;
     
 console.log(value03);
 
@@ -48,6 +48,12 @@ $("#dues05").val(((value03+value13)*300)-{{Report.dues04}});
 </script>
 
 <div id="reportFormView">
+    <div class="row" style="padding:0;margin:0">
+        <div class="col-lg-1 col-xs-3" style="padding:0;margin:0">
+            <button type="button" class="blueButton" onclick="window.history.back()">Back</button>
+        </div>
+    </div>
+    <hr>
 
 <div id="reportHeadingSection" class="text-center">
     <h4 id="reportHeading1"><b>Secretarial Report : {{ Report.month }}</b></h4>

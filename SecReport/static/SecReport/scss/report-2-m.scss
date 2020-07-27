@@ -386,22 +386,20 @@
 }
 
 #listSection {
+    #reportHeading1 {
+        color: $pinkcolor;
+        font-size: $m-extraMedium;
+    }
 
-    
-#reportHeading1 {
-    color: $pinkcolor;
-    font-size: $m-extraMedium;
-}
+    #reportImage1 {
+        height: auto;
+        width: 30vw;
+    }
 
-#reportImage1 {
-    height: auto;
-    width: 30vw;
-}
-
-#reportHeading2 {
-    color: $textcolor1;
-    font-size: $m-medium;
-}
+    #reportHeading2 {
+        color: $textcolor1;
+        font-size: $m-medium;
+    }
 
     #clublogo {
         display: none;
@@ -429,4 +427,20 @@
     }
 
 }
+
+
+
+.blueButton {
+    background-color: $textcolor1;
+    color:white;
+    font-weight: bold;
+    border: 2px solid $textcolor1;
+    border-radius: 4px;
+    height : 11vw;
+    width:100%;
+    box-shadow: 3px 3px 2px #555;
+    font-size: $m-small;
+}
+    
+
 }

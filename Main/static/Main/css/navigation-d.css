@@ -2,22 +2,12 @@
   .navigation {
     overflow: hidden;
     background-color: #FFFFFF;
-    padding-top: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-bottom: solid #f1f1f1;
     z-index: 999;
     opacity: 1;
-    width: 10vw;
-  }
-  .navigation:after {
-    content: '';
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    top: 8vw;
-    background: #969696;
-    position: absolute;
+    width: 100%;
   }
   .desktop {
     float: right;
@@ -33,14 +23,16 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
+    height: 3em;
+    font-weight: bold;
   }
   .navigation a:hover {
     color: black;
   }
   .navigation a.active {
     border-bottom: solid #D41367;
-    border-bottom-width: 4px;
+    border-bottom-width: 3px;
     font-weight: bolder;
   }
   .navigation .icon {
@@ -52,7 +44,7 @@
     width: 100%;
   }
   #logo {
-    height: 4em;
+    height: 3.2em;
     width: auto;
     float: left;
   }

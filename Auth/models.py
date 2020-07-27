@@ -1,6 +1,8 @@
+
 from django.db import models
 import uuid
 
+from PIL import Image
 
 # Create your models here.
 from django.contrib.auth.models import AbstractUser
@@ -40,6 +42,22 @@ class Club(models.Model):
         verbose_name = 'Club Profile'
         verbose_name_plural = 'Club Profiles'
 
-# class Rotaractor(models.Model):
-#     account = models.OneToOneField(Account, on_delete=models.CASCADE, primary_key=True)
-#     pass
+    def save(self):
+        try:
+            this = Club.objects.get(account=self.account)
+            if this.logo.path != self.logo.path:
+                this.logo.delete()
+        except Exception as e: 
+            print(e)
+
+        super().save()
+
+        img = Image.open(self.logo.path)
+        width = img.size[0]
+
+        if width > 720 :
+            width = 720
+            wpercent = (width/float(img.size[0]))
+            height = int((float(img.size[1])*float(wpercent)))
+            img = img.resize((width,height), Image.ANTIALIAS)
+            img.save(self.logo.path)

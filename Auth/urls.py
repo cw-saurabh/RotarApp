@@ -8,6 +8,5 @@ urlpatterns = [
     path('passwordChange/', auth_views.PasswordChangeView.as_view(template_name='Auth/passwordChange.html',form_class=PasswordChange, extra_context=({'title':'Change Password','tab':'profile'})), name = 'passwordChange'),
     path('passwordChangeDone/', auth_views.PasswordChangeDoneView.as_view(template_name='Auth/passwordChangeDone.html',extra_context=({'title':'Password Changed !','tab':'profile'})), name = 'password_change_done'),
     path('logout/', auth_views.LogoutView.as_view(extra_context=({'title':'Logout','tab':'logout'})), name = 'logout'),
-    path('profile/', views.profile, name = 'profile2'),
-    # path('accounts/', include('django.contrib.auth.urls')),   
+    path('profile/', views.profile, name = 'profile'),
 ]

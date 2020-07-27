@@ -42,7 +42,7 @@ let requiredFields = {
                 'memberMatrix40','memberMatrix41','memberMatrix42',
                 'dues04'],
     'Avenue' : [],
-    'Others' : ['bulletin00','bulletin01','bulletin02','bulletin03','bulletin04','bulletin05']
+    'Others' : ['bulletin00','bulletin01','bulletin02','bulletin05']
 };
 
 $(document).ready(function(){
@@ -61,6 +61,7 @@ $(document).ready(function(){
         let month = parseInt(("0" + (now.getMonth() + 1)).slice(-2))-1;
         let today2 = now.getFullYear()+"-"+(month<10?"0"+month.toString():month.toString()) ;   
         $("input[type=month]").val(today2); 
+        
 
     if($(window).width()>1000)
     {
@@ -68,11 +69,11 @@ $(document).ready(function(){
         $("#data02").html("<p class=\"text-center\">Female");
         $("#data03").html("<p class=\"text-center\">Other");
         $("#data04").html("<p class=\"text-center\">Total");
-        $("#data10").html("<p>Members at the beginning of "+month+" <b style=\"color:red\"> *</b>");
-        $("#data20").html("<p>Members Added<b style=\"color:red\"> *</b>");
-        $("#data30").html("<p>Members Left<b style=\"color:red\"> *</b>");
-        $("#data40").html("<p>Prospective<b style=\"color:red\"> *</b>");
-        $("#data50").html("<p>Guests (RYE /NGSE /Family)<b style=\"color:red\"> *</b>");
+        $("#data10").html("<p>Members at the beginning of "+month+" <b style=\"color:red\"> **</b>");
+        $("#data20").html("<p>Members Added<b style=\"color:red\"> **</b>");
+        $("#data30").html("<p>Members Left<b style=\"color:red\"> **</b>");
+        $("#data40").html("<p>Prospective<b style=\"color:red\"> **</b>");
+        $("#data50").html("<p>Guests (RYE /NGSE /Family)<b style=\"color:red\"> **</b>");
         $("#data60").html("<p>Total");
     }
 
@@ -88,7 +89,7 @@ $(document).ready(function(){
     // $("#reportButton21").attr('disabled', true);
 
     // $("#bar").css('width','0%');
-    updateProgress();
+    updateMonth();
     
 });
 
@@ -206,10 +207,10 @@ function updateMatrix(id) {
     memberMatrix33 = memberMatrix30 + memberMatrix31 + memberMatrix32;
     memberMatrix43 = memberMatrix40 + memberMatrix41 + memberMatrix42;
     
-    memberMatrix50 = memberMatrix00 + memberMatrix10 + memberMatrix20 + memberMatrix30 + memberMatrix40 ;
-    memberMatrix51 = memberMatrix01 + memberMatrix11 + memberMatrix21 + memberMatrix31 + memberMatrix41 ;
-    memberMatrix52 = memberMatrix02 + memberMatrix12 + memberMatrix22 + memberMatrix32 + memberMatrix42 ;
-    memberMatrix53 = memberMatrix03 + memberMatrix13 + memberMatrix23 + memberMatrix33 + memberMatrix43 ;
+    memberMatrix50 = memberMatrix00 + memberMatrix10 - memberMatrix20;
+    memberMatrix51 = memberMatrix01 + memberMatrix11 - memberMatrix21;
+    memberMatrix52 = memberMatrix02 + memberMatrix12 - memberMatrix22;
+    memberMatrix53 = memberMatrix03 + memberMatrix13 - memberMatrix23;
     
     $("#memberMatrix03").val(memberMatrix03);
     $("#memberMatrix13").val(memberMatrix13);
@@ -252,7 +253,7 @@ function updateMonth() {
     month="December";
     
     if($(window).width()>1000)
-    $("#data10").html("<p>Members at the beginning of "+month+" <b style=\"color:red\"> *</b>");
+    $("#data10").html("<p>Members at the beginning of "+month+" <b style=\"color:red\"> **</b>");
     updateProgress();
 }
 
@@ -419,29 +420,6 @@ function openSection(sectionName) {
     }
 }
 
-
-function openNav() {
-    let x = document.getElementById("mynavigation");
-    if (x.className === "navigation sticky") 
-    {
-        x.className += " responsive";
-    } 
-    else 
-    {
-        x.className = "navigation sticky";
-    }
-    x = document.getElementById("mainWrapperContainer");
-    if (x.className === "container") 
-    {
-        x.className += " blur";
-    } 
-    else 
-    {
-        x.className = "container";
-    }
-
-}
-
 function appendMember() {
     membersCount+=1;
     membersIndex+=1;
@@ -521,7 +499,7 @@ function appendGeneralBodyMeeting() {
     $("#generalBodyMeetings").append(`
     <div class="row" id="gbm`+gbmsIndex+`">
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No. <b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No. <b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=31 oninput="validity.valid||(value='');" id="gbm`+gbmsIndex+`-0" name="gbm`+gbmsIndex+`-0">
         </div>
         <div class="col-lg-2">
@@ -547,7 +525,7 @@ function appendGeneralBodyMeeting() {
             </select>
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><b style="color:red"> *</b><br>
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><b style="color:red"> **</b><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=9999 oninput="validity.valid||(value='');" id="gbm`+gbmsIndex+`-5" name="gbm`+gbmsIndex+`-5">
         </div>
         <div class="col-lg-3">
@@ -576,7 +554,7 @@ function appendBoardOfDirectorsMeeting() {
     $("#boardOfDirectorsMeetings").append(`
     <div class="row" id="bod`+bodsIndex+`">
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.<b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Meeting No.<b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=31 oninput="validity.valid||(value='');" id="bod`+bodsIndex+`-0" name="bod`+bodsIndex+`-0">
         </div>
         <div class="col-lg-2">
@@ -602,7 +580,7 @@ function appendBoardOfDirectorsMeeting() {
             </select>
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees<b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees<b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=9999 oninput="validity.valid||(value='');" id="bod`+bodsIndex+`-5" name="bod`+bodsIndex+`-5">
         </div>
         <div class="col-lg-3">
@@ -644,10 +622,10 @@ function appendFutureEvent() {
         <div class="col-lg-2">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue<b style="color:red"> *</b></p><br>
             <select id="futureEvent`+futureEventsIndex+`-3" name="futureEvent`+futureEventsIndex+`-3">
-                <option value="CMD">Community Service Director</option>
-                <option value="CSD">Club Service Director</option>
-                <option value="ISD">International Service Director</option>
-                <option value="PDD">Professional Development Director</option>
+                <option value="CM">Community Service</option>
+                <option value="CS">Club Service</option>
+                <option value="IS">International</option>
+                <option value="PD">Professional Development</option>
                 <option style="display:none" selected></option>
             </select>
         </div>
@@ -693,23 +671,23 @@ function appendEvent() {
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;&nbsp;Avenue<b style="color:red"> *</b></p><br>
             <select id="event`+eventsIndex+`-2" name="event`+eventsIndex+`-2">
-                <option value="CMD">Community Service Director</option>
-                <option value="CSD">Club Service Director</option>
-                <option value="ISD">International Service Director</option>
-                <option value="PDD">Professional Development Director</option>
+                <option value="CM">Community Service</option>
+                <option value="CS">Club Service</option>
+                <option value="IS">International Service</option>
+                <option value="PD">Professional Development</option>
                 <option style="display:none" selected></option>
             </select>
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees<b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees<b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()" min=0 step=1 max=99999 oninput="validity.valid||(value='');" type="number" id="event`+eventsIndex+`-3" name="event`+eventsIndex+`-3">
         </div>    
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs<b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs<b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" Placeholder="Hrs" min=0 step=1 max=99999 oninput="validity.valid||(value='');" id="event`+eventsIndex+`-4" name="event`+eventsIndex+`-4">
         </div>
         <div class="col-lg-2">
-            <p class="label"><i class="fa fa-inr" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised<b style="color:red"> *</b></p><br>
+            <p class="label"><i class="fa fa-inr" aria-hidden="true"></i>&nbsp;&nbsp;Funds raised<b style="color:red"> **</b></p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="number" Placeholder="Rs. " min=0 max=9999999 step=1 oninput="validity.valid||(value='');" id="event`+eventsIndex+`-5" name="event`+eventsIndex+`-5">
         </div>
         <div class="col-lg-5">
@@ -739,12 +717,6 @@ function fillDues(){
     owedMoney = (parseInt(countN)+parseInt(countn))*300;
     pending = owedMoney - parseInt(paid);
     $("#dues").html(`
-    <div class="col-lg-6" style="display:none">
-    <p class="label">Dues paid upto last month <br>@ INR 300
-        Per member<b style="color:red"> *</b>
-        </p><br>
-    <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues00"  id="dues00" value="NA">
-    </div>
     <div class="col-lg-6">
         <p class="label" id="duesLabel01">Total number of members at the <br>beginning of `+month+` (N)</p><br>
         <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues01"  id="dues01" value="`+countN+`" readonly>
@@ -754,15 +726,22 @@ function fillDues(){
         <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues02"  id="dues02" value="`+countn+`" readonly>
     </div>
     <div class="col-lg-6">
-        <p class="label">The fees amount that the district owes<br>(N + n) * 300</p><br>
+    <p class="label">Dues paid upto the last month <br>@ INR 300
+        Per member (P)<b style="color:red"></b>
+        </p><br>
+    <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues00"  id="dues00" value="0" readonly>
+    </div>
+    <div class="col-lg-6">
+        <p class="label" id="duesLabel03">District Dues paid in `+month+`<b style="color:red"> **</b><br>(p)</p><br>
+        <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=`+owedMoney+` oninput="validity.valid||(value='');" name="dues04" id="dues04" value="`+paid+`">
+    </div>
+    <div class="col-lg-6">
+        <p class="label">The fees amount that the district<br>owes : (N + n) * 300</p><br>
         <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues03"  id="dues03" value="`+owedMoney+`" readonly>
     </div>
     <div class="col-lg-6">
-        <p class="label" id="duesLabel03">District Dues paid in `+month+`<b style="color:red"> *</b></p><br><br>
-        <input autocomplete="off" onchange="updateProgress()"  type="number" min=0 step=1 max=999999 oninput="validity.valid||(value='');" name="dues04" id="dues04" value="`+paid+`">
-    </div>
-    <div class="col-lg-6">
-        <p class="label">Pending dues </p><br>
+        <p class="label">Pending dues<br>(N + n) * 300 - (P + p)</p>
+
         <input autocomplete="off" onchange="updateProgress()"  type="text" name="dues05"  id="dues05" value="`+pending+`" readonly>
     </div>
     `);
@@ -782,10 +761,6 @@ function deleteRow(dataType, clicked) {
         let n = 6;
         requiredFields['Admin'].splice(index,n);
         
-        // remove from requiredFieldsNumeric
-        index = requiredFieldsNumeric['Admin'].indexOf(target+"-0");
-        requiredFieldsNumeric['Admin'].splice(index,2);
-        
         //remove from gbmlist
         index = gbmlist.indexOf(target);
         gbmlist.splice(index,1);
@@ -797,10 +772,6 @@ function deleteRow(dataType, clicked) {
         let n = 6;
         requiredFields['Admin'].splice(index,n);
         
-        index = requiredFieldsNumeric['Admin'].indexOf(target+"-0");
-        n = 2;
-        requiredFieldsNumeric['Admin'].splice(index,n);
-        
         index = bodlist.indexOf(target);
         bodlist.splice(index,1);
         
@@ -811,10 +782,6 @@ function deleteRow(dataType, clicked) {
         let index = requiredFields['Avenue'].indexOf(target+"-0");
         let n = 8;
         requiredFields['Avenue'].splice(index,n);
-        
-        index = requiredFieldsNumeric['Avenue'].indexOf(target+"-3");
-        n = 3;
-        requiredFieldsNumeric['Avenue'].splice(index,n);
         
         index = eventlist.indexOf(target);
         eventlist.splice(index,1);

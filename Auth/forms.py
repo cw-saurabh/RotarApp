@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, PasswordChangeForm
 from .models import Account, Club
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.contrib.admin.widgets import AdminDateWidget
 
 class AccountCreationForm(UserCreationForm):
 
@@ -46,7 +47,8 @@ class ProfileUpdateForm(forms.ModelForm) :
     
     logo = forms.ImageField(required=False, widget=forms.FileInput())
     zone = forms.CharField(required=False, widget=forms.TextInput())
-
+    date = forms.DateField(required=False, widget=forms.DateInput(attrs={
+                    'type': 'date'}))
     class Meta :
         model = Club
         fields = ['zone','logo','date','meetingPlace']       

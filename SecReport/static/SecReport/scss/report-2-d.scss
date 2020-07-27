@@ -315,7 +315,7 @@
 }
 
 
-#reportButton00,#reportButton01,#reportButton02,#reportButton10,#reportButton11,#reportButton12,#reportButton20,#reportButton21,#reportButton22 {
+.blueButton, #reportButton00,#reportButton01,#reportButton02,#reportButton10,#reportButton11,#reportButton12,#reportButton20,#reportButton21,#reportButton22 {
     background-color: $textcolor1;
     color:white;
     font-weight: bold;
@@ -328,6 +328,7 @@
     border: 2px solid $textcolor1;
     box-shadow: 3px 3px 2px #555;
 }
+
 
 #reportButtons {
     padding:0;

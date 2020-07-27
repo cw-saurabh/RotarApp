@@ -1,13 +1,10 @@
-
 {% extends "Main/base.html" %}
 
 {% load static %}
 {% load crispy_forms_tags }
 {% block content %}
 
-<div class="" id="authSection">
-  
-  <!-- <img id="loginImage1" src="{% static 'Main/images/Group 10@2x.png' %}" alt="Rotaract"> -->
+<div class="authSection">
 
   <div class="heading ">
     <b>Login</b>
@@ -36,27 +33,10 @@
     
     {% endif %}
     
-    <input autocomplete="off"type="submit" id="loginButton1" value="Login"></input>
-    <!-- <div id="formText">
-      <h3 style="float:left"><b>Login</b></h3>
-    </div> -->
-    <!-- <input autocomplete="off" type="text" placeholder="Club name" name="clubname" required>
-    <br>
-    <input autocomplete="off" type="password" placeholder="Password" name="password" required>      
-    <br> -->
+    <input autocomplete="off" type="submit" id="loginButton1" value="Login"></input>
     
   </form>
   <br class="desktop"><br class="desktop"><br class="desktop">
 </div>
   
-    <!-- <div class="container-fluid border" id="login-section"> -->
-      <!-- <label for="uname"><b>Club Name</b></label>
-      <input autocomplete="off" type="text" placeholder="Enter your club name" name="uname" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input autocomplete="off" type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit">Login</button> -->
-    <!-- </div> -->
-
 {% endblock content%}

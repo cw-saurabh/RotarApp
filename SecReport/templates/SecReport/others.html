@@ -3,6 +3,11 @@
 </div>
 <br>
 <div class="container-fluid table-responsive">
+    <div class="instructions" style="padding:2%;color:#337ab7;">
+        <h6><b>In the 'Drive Link' field, you have to copy and paste the link.</b></h6>
+        <h6><b>Type '-' in case you don't have one.</b></h6>
+    </div>
+    <hr>
     <div class="row">
         <div class="col-lg-4">
             <p class="label">Name of Bulletin<b style="color:red"> *</b></p><br>
@@ -17,11 +22,11 @@
             <input autocomplete="off" onchange="updateProgress()"  type="url" maxlength="100" oninput="validateUrl(this.id)||(value='');" name="bulletin02"  id="bulletin02">
         </div>
         <div class="col-lg-4">
-            <p class="label">Issued on<b style="color:red"> *</b></p><br>
+            <p class="label">Issued on</p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="date" name="bulletin03"  id="bulletin03">
         </div>
         <div class="col-lg-4">
-            <p class="label">Last Issued on<b style="color:red"> *</b></p><br>
+            <p class="label">Last Issued on</p><br>
             <input autocomplete="off" onchange="updateProgress()"  type="date" name="bulletin04"  id="bulletin04">
         </div>
         <div class="col-lg-4">

@@ -339,4 +339,15 @@
   #listSection #member1 {
     margin: 0 0 2vw 0;
   }
+  .blueButton {
+    background-color: #337ab7;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+    height: 11vw;
+    width: 100%;
+    box-shadow: 3px 3px 2px #555;
+    font-size: 3vw;
+  }
 }

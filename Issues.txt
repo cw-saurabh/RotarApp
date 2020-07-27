@@ -1,2 +1,0 @@
-Validation of links
-Validation of negative values
