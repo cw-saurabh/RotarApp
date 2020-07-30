@@ -18,6 +18,12 @@ class AccountAdmin(UserAdmin):
         # ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
     )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('name', 'username', 'password1', 'password2', 'rotaryId', 'is_club'),
+        }),
+    )
 
 admin.site.register(Account, AccountAdmin)
 admin.site.register(Club)

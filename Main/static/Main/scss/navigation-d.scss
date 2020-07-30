@@ -11,7 +11,9 @@
     z-index:999;
     opacity:1;
     width:100%;
+    height:3vw;    
 }
+
 
 .desktop {
     float:right;
@@ -27,10 +29,10 @@
     display: block;
     color: $textcolor1;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0.8vw 1.2vw;
     text-decoration: none;
-    font-size: 1.3vw;
-    height:3em;
+    font-size: 1.1vw;
+    height:3vw;
     font-weight:bold;
 }
   
@@ -42,8 +44,8 @@
     border-bottom: solid $pinkcolor;
     border-bottom-width: 3px;
     font-weight: bolder;
-    // background-color: $pinkcolor;
-    // color:white;
+    background-color: $pinkcolor;
+    color:white;
 }
   
 .navigation .icon {
@@ -57,10 +59,14 @@
 }
 
 #logo {
-    // margin-top:0.5%;
-    height: 3.2em;
+    margin-top:0.5vw;
+    margin-bottom:0.5vw;
+    height: 2vw;
     width: auto;
-    float: left;
+    float: left;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
       
 }

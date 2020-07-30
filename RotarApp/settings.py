@@ -23,7 +23,7 @@ with open('RotarApp/etc/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','www.rotaractrid3131.ml','ss0506.pythonanywhere.com']
 
@@ -139,10 +139,10 @@ LOGIN_URL = '/login'
 
 # Production Checklist
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-X_FRAME_OPTIONS = 'DENY'
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# X_FRAME_OPTIONS = 'DENY'
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECURE_BROWSER_XSS_FILTER = True
 # SECURE_SSL_REDIRECT = True
