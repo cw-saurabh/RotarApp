@@ -46,7 +46,10 @@ class PasswordChange(PasswordChangeForm):
 class ProfileUpdateForm(forms.ModelForm) :
     
     logo = forms.ImageField(required=False, widget=forms.FileInput())
-    zone = forms.CharField(required=False, widget=forms.TextInput())
+    zone = forms.CharField(required=False, widget=forms.TextInput(attrs={
+        'type': 'text',
+        'value':0
+    }))
     date = forms.DateField(required=False, widget=forms.DateInput(attrs={
                     'type': 'date'}))
     class Meta :

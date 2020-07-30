@@ -42,20 +42,16 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
 // Main wrapper container - Touch at your own risk
 
 .container {
-    width:90%;
-    // padding-left:5%;
-    // padding-right:5%;
+    width:90vw;
     margin: 0 auto;
     margin-top:2em;
     margin-bottom:2em;
     padding:2em;
     border-radius:4px;
-    // padding-bottom:0;
-    // background:white;
-    // min-height: 90%;
 }
 
 #mainWrapperContainer {
+    min-height:39vw;
     background:white;
     box-shadow: -3px -3px 10px grey;
 }
@@ -83,7 +79,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
 
 .homeImage1 {
     margin-left:5vw;
-    width: 40vw;
+    width: 35vw;
     height: auto;
 }
 
@@ -99,5 +95,7 @@ p, div, h1, h2, h3, h4, h5, h6, a, span {
     padding:2vw;
     z-index: 9999;
 }
+
+
 
 }

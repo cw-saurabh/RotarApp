@@ -137,16 +137,13 @@ LOGIN_REDIRECT_URL = 'main-home'
 LOGOUT_REDIRECT_URL = 'main-home'
 LOGIN_URL = '/login'
 
-# Credentials :
-# Username: admin
-# Rotary Id: 0
-# Email address: admin@gmail.com
-# Password: babubhaiya
-
-# Username: panvelcentral
-# Rotary Id: 214399
-# Email address: rotaractclubpanvelcentral@gmail.com
-# Password: babubhaiya
-
+# Production Checklist
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# X_FRAME_OPTIONS = 'DENY'
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 300

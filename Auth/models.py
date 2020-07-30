@@ -29,7 +29,7 @@ class Account(AbstractUser):
 class Club(models.Model):
     account = models.OneToOneField(Account, on_delete=models.CASCADE, primary_key=True)
     clubKey= models .UUIDField(verbose_name="Club Key", default=uuid.uuid4, editable=False)
-    zone = models.IntegerField(verbose_name = "Zone")
+    zone = models.IntegerField(verbose_name = "Zone",blank=True, null=True)
     clubCode = models.IntegerField(verbose_name = "Club Code", blank=True, null=True)
     logo = models.ImageField(verbose_name="Logo", upload_to="logos", default="logos/district_logo.png")
     date  = models.DateTimeField(verbose_name = "Charter Date", null=True, blank=True, default=None)
@@ -42,22 +42,27 @@ class Club(models.Model):
         verbose_name = 'Club Profile'
         verbose_name_plural = 'Club Profiles'
 
-    def save(self):
+    def save(self, *args, **kwargs):
         try:
             this = Club.objects.get(account=self.account)
-            if this.logo.path != self.logo.path:
+            print(this.logo.path)
+            print(self.logo.path)
+            if this.logo.path != self.logo.path and 'district_logo.png' not in this.logo.path :
                 this.logo.delete()
         except Exception as e: 
             print(e)
 
-        super().save()
+        super().save(*args, **kwargs)
 
-        img = Image.open(self.logo.path)
-        width = img.size[0]
+        try :
+            img = Image.open(self.logo.path)
+            width = img.size[0]
 
-        if width > 720 :
-            width = 720
-            wpercent = (width/float(img.size[0]))
-            height = int((float(img.size[1])*float(wpercent)))
-            img = img.resize((width,height), Image.ANTIALIAS)
-            img.save(self.logo.path)
+            if width > 720 :
+                width = 720
+                wpercent = (width/float(img.size[0]))
+                height = int((float(img.size[1])*float(wpercent)))
+                img = img.resize((width,height), Image.ANTIALIAS)
+                img.save(self.logo.path)
+        except Exception as e: 
+            print(e)
