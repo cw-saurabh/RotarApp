@@ -9,5 +9,6 @@ urlpatterns = [
     path('passwordChangeDone/', auth_views.PasswordChangeDoneView.as_view(template_name='Auth/passwordChangeDone.html',extra_context=({'title':'Password Changed !','tab':'profile'})), name = 'password_change_done'),
     path('logout/', auth_views.LogoutView.as_view(extra_context=({'title':'Logout','tab':'logout'})), name = 'logout'),
     path('profile/', views.profile, name = 'profile'),
+    path('email/', views.email, name = 'email'),
     path('create/', views.createAccounts, name = 'createAccounts'),
 ]

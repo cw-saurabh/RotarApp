@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.conf import settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ with open('RotarApp/etc/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','www.rotaractrid3131.ml','ss0506.pythonanywhere.com']
 
@@ -139,11 +140,22 @@ LOGIN_URL = '/login'
 
 # Production Checklist
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# X_FRAME_OPTIONS = 'DENY'
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_SECONDS = 300
+
+if not (settings.DEBUG) :
+    SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 300
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rotaract3131web@gmail.com'
+EMAIL_HOST_PASSWORD = 'district@3131'
