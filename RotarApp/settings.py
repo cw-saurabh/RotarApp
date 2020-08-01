@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('RotarApp/etc/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
+# with open('RotarApp/etc/secret_key.txt') as f:
+#     SECRET_KEY = f.read().strip()
+
+SECRET_KEY = 'h5l%fev*eb22%3!2wf0e^&57-c^ke5c__5ea8kj-phdabqs)4p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','www.rotaractrid3131.ml','ss0506.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','ss0506.pythonanywhere.com','www.rotaractdistrict3131.org']
 
 # Application definition
 
@@ -77,12 +79,27 @@ WSGI_APPLICATION = 'RotarApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'rotarapp',
+#         'USER': 'root',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#              'charset': 'utf8mb4',
+#         }
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rotarapp',
-        'USER': 'root',
-        'HOST': 'localhost',
+        'NAME': 'ss0506$default',
+        'USER': 'ss0506',
+        'PASSWORD':'district@3131',
+        'HOST': 'ss0506.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
@@ -130,10 +147,6 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = '/home/ss0506/RotarApp/static'
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-os.path.join(BASE_DIR, 'static'),
-)
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
