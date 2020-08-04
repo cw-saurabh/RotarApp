@@ -34,16 +34,26 @@ $("#value51").val(value51);
 $("#value52").val(value52);
 $("#value53").val(value53);
 
-
-
 $("#dues01").val(value03);
 $("#dues02").val(value13);
 $("#dues03").val((value03+value13)*300);
 $("#dues05").val(((value03+value13)*300)-{{Report.dues04}});
 
+if($(window).width()>1000)
+    {
+        $("#data01").html("<p class=\"text-center\">Male");
+        $("#data02").html("<p class=\"text-center\">Female");
+        $("#data03").html("<p class=\"text-center\">Other");
+        $("#data04").html("<p class=\"text-center\">Total");
+        $("#data10").html("<p>Members at the beginning of this month");
+        $("#data20").html("<p>Members Added");
+        $("#data30").html("<p>Members Left");
+        $("#data40").html("<p>Prospective");
+        $("#data50").html("<p>Guests (RYE /NGSE /Family)");
+        $("#data60").html("<p>Total");
+    }
 
 });
-
 
 </script>
 

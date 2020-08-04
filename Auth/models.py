@@ -41,6 +41,7 @@ class Club(models.Model):
     class Meta:
         verbose_name = 'Club Profile'
         verbose_name_plural = 'Club Profiles'
+        
 
     def save(self, *args, **kwargs):
         try:

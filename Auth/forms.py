@@ -45,19 +45,24 @@ class PasswordChange(PasswordChangeForm):
 
 class ProfileUpdateForm(forms.ModelForm) :
     
+    class Meta :
+        model = Club
+        fields = ['zone','logo','date','meetingPlace']       
+        labels = {
+        "date": "Charter Date"
+        }
+
     logo = forms.ImageField(required=False, widget=forms.FileInput())
     zone = forms.CharField(required=False, widget=forms.TextInput(attrs={
         'type': 'text',
         'value':0
     }))
-    date = forms.DateField(required=False, widget=forms.DateInput(attrs={
+    date = forms.DateField(label='Charter Date',required=False, widget=forms.DateInput(attrs={
                     'type': 'date'}))
-    class Meta :
-        model = Club
-        fields = ['zone','logo','date','meetingPlace']       
+    
 
 class EmailUpdateForm(forms.ModelForm) :
         
     class Meta :
         model = Account
-        fields = ['email']       
+        fields = ['email','name']       

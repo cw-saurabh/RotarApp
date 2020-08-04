@@ -47,10 +47,25 @@ let requiredFields = {
 
 $(document).ready(function(){
     
+        $("#memberMatrix00").val(memberMatrix00);
+        $("#memberMatrix01").val(memberMatrix01);
+        $("#memberMatrix02").val(memberMatrix02);
         $("#memberMatrix03").val(memberMatrix03);
+        $("#memberMatrix10").val(memberMatrix10);
+        $("#memberMatrix11").val(memberMatrix11);
+        $("#memberMatrix12").val(memberMatrix12);
         $("#memberMatrix13").val(memberMatrix13);
+        $("#memberMatrix20").val(memberMatrix20);
+        $("#memberMatrix21").val(memberMatrix21);
+        $("#memberMatrix22").val(memberMatrix22);
         $("#memberMatrix23").val(memberMatrix23);
+        $("#memberMatrix30").val(memberMatrix30);
+        $("#memberMatrix31").val(memberMatrix31);
+        $("#memberMatrix32").val(memberMatrix32);
         $("#memberMatrix33").val(memberMatrix33);
+        $("#memberMatrix40").val(memberMatrix40);
+        $("#memberMatrix41").val(memberMatrix41);
+        $("#memberMatrix42").val(memberMatrix42);
         $("#memberMatrix43").val(memberMatrix43);
         $("#memberMatrix50").val(memberMatrix50);
         $("#memberMatrix51").val(memberMatrix51);
@@ -83,6 +98,20 @@ $(document).ready(function(){
     appendFutureEvent();
     appendEvent();
     fillDues();
+
+    var today = new Date();
+    var mm = today.getMonth(); //January is 0!
+    var yyyy = today.getFullYear();
+    
+    if(mm<10){
+            mm='0'+mm
+    } 
+
+    day1 = yyyy+'-'+mm+'-01';
+    daylast = yyyy+'-'+mm+'-31';
+    
+    $("input[type=date]").attr("min", day1);
+    $("input[type=date]").attr("max", daylast);
 
     $("#reportButton00,#reportButton10,#reportButton20").html("Prev");
     $("#member1Del,#gbm1Del,#bod1Del,#futureEvent1Del,#event1Del").attr('disabled', true);
@@ -504,7 +533,7 @@ function appendGeneralBodyMeeting() {
         </div>
         <div class="col-lg-2">
             <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date<b style="color:red"> *</b></p><br>
-            <input autocomplete="off" onchange="updateProgress()"  type="date" id="gbm`+gbmsIndex+`-1" name="gbm`+gbmsIndex+`-1">
+            <input autocomplete="off" onchange="updateProgress()"  type="date"  id="gbm`+gbmsIndex+`-1" name="gbm`+gbmsIndex+`-1">
         </div>   
         <div class="col-lg-8">
             <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)<b style="color:red"> *</b></p><br>
@@ -624,7 +653,7 @@ function appendFutureEvent() {
             <select id="futureEvent`+futureEventsIndex+`-3" name="futureEvent`+futureEventsIndex+`-3">
                 <option value="CM">Community Service</option>
                 <option value="CS">Club Service</option>
-                <option value="IS">International</option>
+                <option value="IS">International Service</option>
                 <option value="PD">Professional Development</option>
                 <option style="display:none" selected></option>
             </select>
@@ -696,7 +725,7 @@ function appendEvent() {
         </div>
         <div class="col-lg-3">
             <p class="label"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;Instagram Link of the Event<b style="color:red"> *</b></p><br>
-            <input autocomplete="off" onchange="updateProgress()"  type="url" maxlength="100" oninput="validateUrl(this.id)||(value='');" id="event`+eventsIndex+`-7" name="event`+eventsIndex+`-7">
+            <input autocomplete="off" onchange="updateProgress()" Placeholder="Copy and paste your link" type="url" maxlength="100" oninput="validateUrl(this.id)||(value='');" id="event`+eventsIndex+`-7" name="event`+eventsIndex+`-7">
         </div>
         <div class="col-lg-2">
             <br>

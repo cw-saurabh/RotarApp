@@ -17,7 +17,6 @@ function jaadu() {
     $("input[type=date]").val(today1); 
     $("input[type=text]").val("0"); 
     $("input[type=number]").val(0); 
-    $("input[type=url]").val('-'); 
     $("select").prop('selectedIndex', 0);
     $("#bar").css('width','100%'); 
     $("#reportButton21").attr('disabled', false);  
@@ -98,7 +97,7 @@ $(document).ready(function(){
     </div>
     <br class="mobile"><br class="mobile">
     <div class="col-lg-3" >
-        <input autocomplete="off" onchange="updateMonth()" type="month" style="margin:0" id="month" name="month">
+        <input autocomplete="off" onchange="updateMonth()" type="month" style="margin:0" id="month" name="month" readonly>
     </div>
 </div>
     <br><br>

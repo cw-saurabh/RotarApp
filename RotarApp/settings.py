@@ -93,20 +93,36 @@ WSGI_APPLICATION = 'RotarApp.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ss0506$default',
-        'USER': 'ss0506',
-        'PASSWORD':'district@3131',
-        'HOST': 'ss0506.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-             'charset': 'utf8mb4',
+if not (settings.DEBUG) :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'ss0506$default',
+            'USER': 'ss0506',
+            'PASSWORD':'district@3131',
+            'HOST': 'ss0506.mysql.pythonanywhere-services.com',
+            'PORT': '3306',
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                'charset': 'utf8mb4',
+            }
         }
     }
+else :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'rotarapp',
+            'USER': 'root',
+            'HOST': 'localhost',
+            'PORT': '3306',
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                'charset': 'utf8mb4',
+            }
+        }
 }
+    
 
 AUTH_USER_MODEL = 'Auth.Account'
 
