@@ -73,11 +73,12 @@
             width:80%;
             margin-left:2vw;
             margin-right:2vw;
-            margin-top:2vw;
+            margin-top:3vw;
             margin-bottom:3vw;
             height:2.6vw;
-            color : red;
+            color : black;
             font-size : $m-small;
+            font-weight: bold;
         }
 
         input[type=text]:hover, input[type=text]:focus, input[type=Password]:hover, input[type=Password]:focus, input[type=text], input[type=Password] {

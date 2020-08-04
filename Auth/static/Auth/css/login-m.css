@@ -63,11 +63,12 @@
     width: 80%;
     margin-left: 2vw;
     margin-right: 2vw;
-    margin-top: 2vw;
+    margin-top: 3vw;
     margin-bottom: 3vw;
     height: 2.6vw;
-    color: red;
+    color: black;
     font-size: 3vw;
+    font-weight: bold;
   }
   .authSection .error input[type=text]:hover, .authSection .error input[type=text]:focus, .authSection .error input[type=Password]:hover, .authSection .error input[type=Password]:focus, .authSection .error input[type=text], .authSection .error input[type=Password] {
     color: red;

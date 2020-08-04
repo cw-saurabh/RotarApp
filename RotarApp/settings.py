@@ -164,7 +164,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = '/home/ss0506/RotarApp/static'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = '/home/ss0506/RotarApp/media'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'main-home'

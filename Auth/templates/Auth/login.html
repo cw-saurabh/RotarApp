@@ -19,7 +19,7 @@
     
     {% if form.errors %}
     <div class="error">
-      <p>{{ form.non_field_errors.as_text }}</p>
+      <p>{{ form.non_field_errors.as_text }}</p><br class="mobile">
       {{ form.username }}
       {{ form.username.errors }}
       {{ form.password }}
