@@ -25,7 +25,7 @@ def profile(request):
         p_form = ProfileUpdateForm(instance= Club.objects.filter(account=request.user).first())
         e_form = EmailUpdateForm(instance=request.user)
 
-    return render(request, 'Auth/updateProfile.html',{'tab':'profile','pform':p_form,'eform':e_form,'profile':request.user.club})
+    return render(request, 'Auth/updateProfile.html',{'title':'Profile','tab':'profile','pform':p_form,'eform':e_form,'profile':request.user.club})
 
 def createAccounts(request):
     csvFile='credentials.csv'
