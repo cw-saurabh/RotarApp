@@ -74,8 +74,10 @@
     </div>  
     <br class="mobile">
     <br class="mobile">
-    {% include "Main/footer.html" %}
-  
+
+    {% if not title %}
+      {% include "Main/footer.html" %}
+    {% endif %}
   </body>
 
 </html>
