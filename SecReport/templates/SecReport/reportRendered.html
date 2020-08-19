@@ -1,5 +1,5 @@
 {% extends "Main/base.html" %}
-    
+
 {% load static %}
 
 {% block content %}
@@ -21,7 +21,7 @@ value50 = {{Report.memberMatrix00}} + {{Report.memberMatrix10}} - {{Report.membe
 value51 = {{Report.memberMatrix01}} + {{Report.memberMatrix11}} - {{Report.memberMatrix21}};
 value52 = {{Report.memberMatrix02}} + {{Report.memberMatrix12}} - {{Report.memberMatrix22}};
 value53 = value03 + value13 - value23;
-    
+
 console.log(value03);
 
 $("#value03").val(value03);
@@ -69,9 +69,9 @@ if($(window).width()>1000)
     <h4 id="reportHeading1"><b>Secretarial Report : {{ Report.month }}</b></h4>
     {% if Profile.zone %}
     <h4 id="reportHeading2"><b>{{ Club.name }}<br><h4>Zone {{ Profile.zone }} - {{ Club.rotaryId }}</h4></b></h4>
-    {% else %}    
+    {% else %}
     <h4 id="reportHeading2"><b>{{ Club.name }}<br><h4>{{ Club.rotaryId }}</h4></b></h4>
-    {% endif %}     
+    {% endif %}
 </div>
 <br>
 <hr style="margin:0;border-width: medium;border-color: #D41367;width:100%">
@@ -113,7 +113,7 @@ if($(window).width()>1000)
                     {% else %}
                     <input readonly="true" type="text" value="No">
                     {% endif %}
-                </div>   
+                </div>
                 <div class="col-lg-8">
                     <p class="label"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;Agenda of the Meeting (brief)</p><br>
                     <input readonly="true" type="text"  value="{{ GBM.gbm2 }}">
@@ -126,7 +126,7 @@ if($(window).width()>1000)
                     <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
                 </div>
             </div>
-        
+
             {% endfor %}
         <br><br><br>
         </div>
@@ -147,7 +147,7 @@ if($(window).width()>1000)
                 <div class="col-lg-3">
                     <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
                     <input readonly="true" type="text" value="{{ BOD.bod1.date }}">
-                </div>   
+                </div>
                 <div class="col-lg-3">
                     <p class="label">ByLaws Passed?</p><br>
                     {% if BOD.bod3 %}
@@ -176,7 +176,7 @@ if($(window).width()>1000)
                     <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
                 </div>
             </div>
-            
+
             {% endfor %}
             <br><br><br>
         </div>
@@ -195,7 +195,7 @@ if($(window).width()>1000)
         </div>
         <div class="row m-memberMatrix">
             <div class="col-xs-2 col-lg-4" id="data00">
-                
+
             </div>
             <div class="col-xs-2" id="data01">
                 M
@@ -349,7 +349,7 @@ if($(window).width()>1000)
                 </div>
         </div>
     <br><br><br>
-    </div> 
+    </div>
     <br><br><br>
     <div class="heading">
         <b>Events Carried Out</b>
@@ -358,7 +358,7 @@ if($(window).width()>1000)
     <div class="container-fluid table-responsive">
         <div id="eventsView">
             {% for Event in Events %}
-            
+
             <div class="row">
                 <div class="col-lg-2">
                     <p class="label"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date</p><br>
@@ -375,7 +375,7 @@ if($(window).width()>1000)
                 <div class="col-lg-2">
                     <p class="label"><i class="fa fa-user-times" aria-hidden="true"></i>&nbsp;&nbsp;Attendees</p><br>
                     <input readonly="true" type="text" value="{{ Event.event3 }}">
-                </div>    
+                </div>
                 <div class="col-lg-2">
                     <p class="label"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Volunteer Hrs</p><br>
                     <input readonly="true" type="text" value="{{ Event.event4 }}">
@@ -434,7 +434,7 @@ if($(window).width()>1000)
             </div>
         </div>
     <br><br><br>
-    </div> 
+    </div>
     <br><br><br>
     <div class="heading">
         <b>Upcoming Events</b>
@@ -465,11 +465,11 @@ if($(window).width()>1000)
                     <hr style="border-width: medium;border-color:#337ab7;border-radius : 4px;">
                 </div>
             </div>
-    
+
             {% endfor %}
         </div>
     <br><br><br>
-    </div> 
+    </div>
     <br><br><br>
     <div class="heading">
         <b>Feedback</b>
@@ -482,7 +482,7 @@ if($(window).width()>1000)
                     from the District <br>Reporting Secretary ?
             </div>
             <div class="col-lg-4">
-                {% if feedback00 %}
+                {% if Report.feedback00 %}
                 <input readonly="true" type="text" value="Yes">
                 {% else %}
                 <input readonly="true" type="text" value="No">
@@ -492,7 +492,7 @@ if($(window).width()>1000)
                 <p class="label">Do you get a prompt response from <br>the DZR / AZR ?
             </div>
             <div class="col-lg-4">
-                {% if feedback01 %}
+                {% if Report.feedback01 %}
                 <input readonly="true" type="text" value="Yes">
                 {% else %}
                 <input readonly="true" type="text" value="No">
@@ -503,7 +503,7 @@ if($(window).width()>1000)
                     of Dues ?
             </div>
             <div class="col-lg-4">
-                {% if feedback02 %}
+                {% if Report.feedback02 %}
                 <input readonly="true" type="text" value="Yes">
                 {% else %}
                 <input readonly="true" type="text" value="No">
@@ -513,7 +513,7 @@ if($(window).width()>1000)
                 <p class="label">Do you get a timely response from <br>the District ?
             </div>
             <div class="col-lg-4">
-                {% if feedback03 %}
+                {% if Report.feedback03 %}
                 <input readonly="true" type="text" value="Yes">
                 {% else %}
                 <input readonly="true" type="text" value="No">
@@ -521,7 +521,7 @@ if($(window).width()>1000)
             </div>
         </div>
     <br><br><br>
-    </div> 
+    </div>
     <br><br><br>
     <div class="heading">
         <b>Suggestions (If any)</b>
@@ -529,10 +529,10 @@ if($(window).width()>1000)
     <br><br><br>
     <div class="container-fluid table-responsive">
         <div class="row">
-            <textarea readonly="true" name="suggestion00"  id="suggestion00"></textarea>
+            <textarea readonly="true" name="suggestion00"  id="suggestion00" >{{ Report.suggestion00 }}</textarea>
         </div>
     <br><br><br>
-    </div> 
+    </div>
     <br><br><br>
 </div>
 
